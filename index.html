@@ -1,16 +1,131 @@
 <!DOCTYPE html>
-<html><head><title>UOS Chess Society</title></head><body>
-<h1>UOS Chess Society</h1>
-<nav>
-<a href="index.html">Home</a> |
-<a href="tournament.html">Tournament</a> |
-<a href="gallery.html">Photos & Videos</a> |
-<a href="contact.html">Contact</a>
-</nav>
-<h2>Welcome to the UOS Chess Society</h2>
-<p>Join weekly club nights, coaching sessions, socials and tournaments.</p>
-<h2>Next Tournament</h2>
-<p><strong>Spring Open Chess Championship 2026</strong></p>
-<p>Date: 14–21 June 2026</p>
-<p><a href="tournament.html">View tournament details</a></p>
-</body></html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UOS Chess Society</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="nav-brand"><span>♟</span> UOS Chess</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="tournament.html">Tournament</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page">
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-chess-icon">♜</div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">University of Southampton</p>
+        <h1>UOS <em>Chess</em><br>Society</h1>
+        <p class="hero-sub">
+          Compete, learn, and connect. Weekly club nights, coaching sessions,
+          socials and inter-university tournaments — all welcome, all abilities.
+        </p>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+          <a href="tournament.html" class="btn btn-solid">Spring Open 2026 →</a>
+          <a href="contact.html" class="btn">Join Us</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- What we offer -->
+    <section>
+      <p class="section-label">About the Society</p>
+      <h2 class="section-title">More than just chess</h2>
+      <div class="cards">
+        <div class="card">
+          <span class="card-icon">♟</span>
+          <h3>Weekly Club Nights</h3>
+          <p>Regular sessions for casual play and competitive practice. Drop in any week — no booking required.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🎓</span>
+          <h3>Coaching Sessions</h3>
+          <p>From beginner fundamentals to advanced endgame theory, our coaching programme has something for every level.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🏆</span>
+          <h3>Tournaments</h3>
+          <p>Internal and inter-university competitions throughout the academic year, including our flagship Spring Open.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🍻</span>
+          <h3>Socials</h3>
+          <p>Chess and community go hand in hand. We run regular social events throughout the year.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tournament Banner -->
+    <section style="padding-top:0;">
+      <p class="section-label">Next Event</p>
+      <h2 class="section-title">Upcoming Tournament</h2>
+      <div class="tourn-banner">
+        <div>
+          <h3>Spring Open Chess Championship 2026</h3>
+          <p class="date">♟ 14 – 21 June 2026 &nbsp;·&nbsp; University of Southampton</p>
+          <p style="color:var(--cream-dk); font-size:1rem; margin-top:0.8rem; max-width:500px;">
+            Open to all students and staff. Multiple sections available — from beginners to experienced club players.
+            Cash prizes and trophies for top finishers.
+          </p>
+        </div>
+        <a href="tournament.html" class="btn btn-solid">View Details →</a>
+      </div>
+    </section>
+
+    <!-- Past Tournament Photos -->
+    <section>
+      <p class="section-label">Gallery</p>
+      <h2 class="section-title">Past Tournaments</h2>
+      <div class="photo-grid">
+        <div class="photo-item">
+          <span>📸</span>
+          <span class="photo-label">Winter Open 2025 — Finals Day</span>
+        </div>
+        <div class="photo-item">
+          <span>♟</span>
+          <span class="photo-label">Club Night</span>
+        </div>
+        <div class="photo-item">
+          <span>🏆</span>
+          <span class="photo-label">Prize Ceremony</span>
+        </div>
+        <div class="photo-item">
+          <span>📸</span>
+          <span class="photo-label">Coaching Session</span>
+        </div>
+        <div class="photo-item">
+          <span>♙</span>
+          <span class="photo-label">Inter-Uni Match</span>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:2rem;">
+        <a href="gallery.html" class="btn">View Full Gallery →</a>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 UOS Chess Society · University of Southampton</p>
+    <p>
+      <a href="mailto:chess@university.edu">chess@university.edu</a>
+      &nbsp;·&nbsp;
+      <a href="contact.html">Get in Touch</a>
+    </p>
+  </footer>
+
+</body>
+</html>

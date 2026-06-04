@@ -1,11 +1,235 @@
 <!DOCTYPE html>
-<html><head><title>Tournament</title></head><body>
-<h1>Spring Open Chess Championship 2026</h1>
-<nav>
-<a href="index.html">Home</a> |
-<a href="tournament.html">Tournament</a> |
-<a href="gallery.html">Photos & Videos</a> |
-<a href="contact.html">Contact</a>
-</nav>
-<p>Full tournament information, schedule, sections, rules and prizes go here.</p>
-</body></html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spring Open 2026 — UOS Chess Society</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="nav-brand"><span>♟</span> UOS Chess</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tournament.html" class="active">Tournament</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page">
+
+    <!-- Page Header -->
+    <div class="page-header" data-icon="♛">
+      <p class="section-label" style="margin-bottom:0.8rem;">UOS Chess Society presents</p>
+      <h1>Spring Open Chess<br>Championship 2026</h1>
+      <p style="color:var(--cream-dk); margin-top:1rem; font-size:1.1rem;">
+        14 – 21 June 2026 &nbsp;·&nbsp; University of Southampton
+      </p>
+      <div style="display:flex; gap:1rem; margin-top:1.8rem; flex-wrap:wrap;">
+        <a href="#enter" class="btn btn-solid">Enter Now →</a>
+        <a href="#schedule" class="btn">View Schedule</a>
+      </div>
+    </div>
+
+    <!-- Overview -->
+    <section>
+      <p class="section-label">Overview</p>
+      <h2 class="section-title">About the Tournament</h2>
+      <p style="color:var(--cream-dk); max-width:700px; margin-bottom:2rem;">
+        The Spring Open Chess Championship is UOS Chess Society's flagship annual event,
+        open to students, staff, and the wider community. Whether you're picking up a piece
+        for the first time or a seasoned club player, there's a section for you.
+      </p>
+
+      <div class="info-grid">
+        <div class="info-box">
+          <h3>Format</h3>
+          <ul>
+            <li>Swiss system — all players complete every round</li>
+            <li>5 rounds per section</li>
+            <li>Classical time controls (45+15)</li>
+            <li>FIDE-rated (Open section)</li>
+            <li>Arbiters on duty throughout</li>
+          </ul>
+        </div>
+        <div class="info-box">
+          <h3>Sections</h3>
+          <ul>
+            <li><strong style="color:var(--gold);">Open</strong> — 1600+ rated / experienced players</li>
+            <li><strong style="color:var(--gold);">Intermediate</strong> — Under 1600 / club regulars</li>
+            <li><strong style="color:var(--gold);">Beginners</strong> — New to tournament play</li>
+          </ul>
+        </div>
+        <div class="info-box">
+          <h3>Prizes</h3>
+          <ul>
+            <li>🥇 Open 1st — £150 + trophy</li>
+            <li>🥈 Open 2nd — £75</li>
+            <li>🥉 Open 3rd — £40</li>
+            <li>🏆 Best Junior prize</li>
+            <li>🏅 Section winners — trophies</li>
+          </ul>
+        </div>
+        <div class="info-box">
+          <h3>Venue &amp; Facilities</h3>
+          <p>
+            University of Southampton — main campus.<br><br>
+            Chess sets, boards, and clocks provided.<br>
+            Refreshments available on site.<br>
+            Free parking for participants.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Schedule -->
+    <section id="schedule" style="padding-top:0;">
+      <p class="section-label">Schedule</p>
+      <h2 class="section-title">Round-by-Round Schedule</h2>
+
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Event</th>
+            <th>Section</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sat 14 Jun</td>
+            <td>10:00</td>
+            <td>Registration &amp; Welcome</td>
+            <td>All sections</td>
+            <td><span class="badge badge-open">Open</span></td>
+          </tr>
+          <tr>
+            <td>Sat 14 Jun</td>
+            <td>11:00</td>
+            <td>Round 1</td>
+            <td>All sections</td>
+            <td><span class="badge badge-open">Open</span></td>
+          </tr>
+          <tr>
+            <td>Sat 14 Jun</td>
+            <td>15:00</td>
+            <td>Round 2</td>
+            <td>All sections</td>
+            <td><span class="badge badge-open">Open</span></td>
+          </tr>
+          <tr>
+            <td>Sun 15 Jun</td>
+            <td>10:00</td>
+            <td>Round 3</td>
+            <td>All sections</td>
+            <td><span class="badge badge-open">Open</span></td>
+          </tr>
+          <tr>
+            <td>Sun 15 Jun</td>
+            <td>14:30</td>
+            <td>Round 4</td>
+            <td>All sections</td>
+            <td><span class="badge badge-open">Open</span></td>
+          </tr>
+          <tr>
+            <td>Sat 21 Jun</td>
+            <td>10:00</td>
+            <td>Round 5 — Final Round</td>
+            <td>All sections</td>
+            <td><span class="badge badge-open">Open</span></td>
+          </tr>
+          <tr>
+            <td>Sat 21 Jun</td>
+            <td>14:00</td>
+            <td>Analysis &amp; Prize Ceremony</td>
+            <td>All sections</td>
+            <td><span class="badge badge-prize">Prize Day</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="color:var(--muted); font-size:0.85rem; font-family:'DM Mono',monospace; margin-top:0.8rem;">
+        * Times are approximate and subject to change. Confirmed times will be emailed to entrants.
+      </p>
+    </section>
+
+    <!-- How to Enter -->
+    <section id="enter" style="padding-top:0;">
+      <p class="section-label">Registration</p>
+      <h2 class="section-title">How to Enter</h2>
+
+      <div class="info-grid">
+        <div class="info-box">
+          <h3>Entry Fees</h3>
+          <ul>
+            <li>UOS Students — <strong>Free</strong></li>
+            <li>UOS Staff — £5</li>
+            <li>General Public — £10</li>
+            <li>Juniors (U18) — Free</li>
+          </ul>
+        </div>
+        <div class="info-box">
+          <h3>What to Bring</h3>
+          <ul>
+            <li>University / photo ID</li>
+            <li>ECF / FIDE number (if rated)</li>
+            <li>Pen and score sheet (spares provided)</li>
+            <li>Arrive 15 minutes before your round</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="background:rgba(44,36,25,0.6); border:1px solid var(--border); border-left:4px solid var(--gold); padding:2rem 2.5rem; margin-top:2rem;">
+        <h3 style="font-family:'Playfair Display',serif; color:var(--gold-lt); margin-bottom:0.8rem;">Ready to Enter?</h3>
+        <p style="color:var(--cream-dk); max-width:600px; margin-bottom:1.5rem;">
+          Email us with your name, preferred section, student/staff/public status, and ECF/FIDE rating (if applicable).
+          We'll confirm your place and send joining instructions.
+        </p>
+        <a href="contact.html" class="btn btn-solid">Register via Email →</a>
+      </div>
+    </section>
+
+    <!-- Rules -->
+    <section style="padding-top:0;">
+      <p class="section-label">Rules &amp; Fair Play</p>
+      <h2 class="section-title">Tournament Rules</h2>
+      <div class="info-grid">
+        <div class="info-box">
+          <h3>General Rules</h3>
+          <ul>
+            <li>FIDE Laws of Chess apply throughout</li>
+            <li>Mobile phones must be silenced and stored</li>
+            <li>No engine assistance permitted</li>
+            <li>Arbiter decisions are final</li>
+            <li>Players must record moves in all rounds</li>
+          </ul>
+        </div>
+        <div class="info-box">
+          <h3>Bye Policy</h3>
+          <ul>
+            <li>Half-point byes available on request</li>
+            <li>Byes must be requested before pairings are made</li>
+            <li>Maximum one bye per player</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 UOS Chess Society · University of Southampton</p>
+    <p>
+      <a href="mailto:chess@university.edu">chess@university.edu</a>
+      &nbsp;·&nbsp;
+      <a href="contact.html">Get in Touch</a>
+    </p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,636 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400;500&display=swap');
+
+/* ── CSS Variables ─────────────────────────────────────────── */
+:root {
+  --ink:       #0f0e0c;
+  --board-dk:  #1a1612;
+  --board-md:  #2c2419;
+  --gold:      #c9a84c;
+  --gold-lt:   #e8cc80;
+  --cream:     #f5f0e8;
+  --cream-dk:  #ddd5c0;
+  --rust:      #8b3a2a;
+  --white:     #fefcf7;
+  --muted:     #7a7060;
+  --border:    rgba(201,168,76,0.25);
+  --shadow:    0 8px 40px rgba(0,0,0,0.55);
+}
+
+/* ── Reset ─────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--board-dk);
+  color: var(--cream);
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* ── Chess-board background texture ───────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    repeating-conic-gradient(rgba(255,255,255,0.018) 0% 25%, transparent 0% 50%);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Navigation ────────────────────────────────────────────── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15,14,12,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  height: 64px;
+}
+
+.nav-brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+  color: var(--gold);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-brand span { font-size: 1.4rem; }
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cream-dk);
+  text-decoration: none;
+  transition: color 0.2s;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+/* ── Page wrapper ──────────────────────────────────────────── */
+.page { position: relative; z-index: 1; }
+
+/* ── Hero ──────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 30% 50%, rgba(201,168,76,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 80% at 80% 20%, rgba(139,58,42,0.12) 0%, transparent 60%);
+}
+
+.hero-chess-icon {
+  position: absolute;
+  right: 6%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22rem;
+  opacity: 0.04;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero-content {
+  padding: 5rem 2.5rem 5rem 6rem;
+  max-width: 680px;
+  animation: fadeUp 0.9s ease both;
+}
+
+.hero-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.2rem, 7vw, 6rem);
+  font-weight: 900;
+  line-height: 1.0;
+  color: var(--white);
+  margin-bottom: 0.2em;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.hero-sub {
+  font-size: 1.2rem;
+  color: var(--cream-dk);
+  margin: 1.4rem 0 2.4rem;
+  max-width: 480px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.85rem 1.8rem;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  transition: background 0.25s, color 0.25s;
+  cursor: pointer;
+  background: transparent;
+}
+
+.btn:hover { background: var(--gold); color: var(--ink); }
+
+.btn-solid {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+.btn-solid:hover { background: var(--gold-lt); border-color: var(--gold-lt); }
+
+/* ── Gold divider ──────────────────────────────────────────── */
+.divider {
+  width: 60px;
+  height: 2px;
+  background: var(--gold);
+  margin: 0 auto 2rem;
+}
+
+/* ── Section ───────────────────────────────────────────────── */
+section {
+  padding: 5rem 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+section.wide { max-width: 1200px; }
+
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+h2.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.4em;
+}
+
+/* ── Cards ─────────────────────────────────────────────────── */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.card {
+  background: rgba(44,36,25,0.7);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.card:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--gold-lt);
+  margin-bottom: 0.5rem;
+}
+
+.card p { color: var(--cream-dk); font-size: 1rem; }
+
+/* ── Tournament banner ─────────────────────────────────────── */
+.tourn-banner {
+  background: linear-gradient(135deg, rgba(44,36,25,0.95) 0%, rgba(26,22,18,0.98) 100%);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--gold);
+  padding: 2.5rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.tourn-banner h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem;
+  color: var(--white);
+}
+
+.tourn-banner .date {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  margin-top: 0.4rem;
+}
+
+/* ── Photo grid ─────────────────────────────────────────────── */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 200px 200px;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+}
+
+.photo-item {
+  background: rgba(44,36,25,0.6);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: var(--muted);
+  font-size: 2rem;
+  transition: border-color 0.2s;
+  overflow: hidden;
+  position: relative;
+}
+
+.photo-item:hover { border-color: var(--gold); }
+
+.photo-item:first-child {
+  grid-column: span 2;
+}
+
+.photo-item .photo-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ── Schedule table ─────────────────────────────────────────── */
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+.schedule-table th {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-align: left;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.schedule-table td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+  font-size: 1rem;
+  color: var(--cream-dk);
+  vertical-align: top;
+}
+
+.schedule-table tr:hover td { background: rgba(201,168,76,0.04); }
+
+.schedule-table td:first-child {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.badge {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid currentColor;
+}
+
+.badge-open { color: #6dbf7e; }
+.badge-closed { color: var(--muted); }
+.badge-prize { color: var(--gold); }
+
+/* ── Sections ───────────────────────────────────────────────── */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.info-box {
+  background: rgba(44,36,25,0.5);
+  border: 1px solid var(--border);
+  padding: 2rem;
+}
+
+.info-box h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--gold-lt);
+  margin-bottom: 0.8rem;
+}
+
+.info-box ul {
+  padding-left: 1.2rem;
+  color: var(--cream-dk);
+  font-size: 1rem;
+}
+
+.info-box ul li { margin-bottom: 0.4rem; }
+.info-box p { color: var(--cream-dk); font-size: 1rem; }
+
+/* ── Contact ─────────────────────────────────────────────────── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 2.5rem;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-item .label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.contact-item a, .contact-item p {
+  color: var(--cream);
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.contact-item a:hover { color: var(--gold); }
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 2.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  background: rgba(44,36,25,0.8);
+  border: 1px solid var(--border);
+  color: var(--cream);
+  padding: 0.75rem 1rem;
+  font-family: 'Crimson Text', serif;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus { border-color: var(--gold); }
+
+.form-group textarea { min-height: 120px; resize: vertical; }
+
+/* ── Page header ─────────────────────────────────────────────── */
+.page-header {
+  padding: 5rem 6rem 3rem;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-header::after {
+  content: attr(data-icon);
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14rem;
+  opacity: 0.04;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.page-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  color: var(--white);
+  margin-top: 0.5rem;
+}
+
+/* ── Gallery tabs ─────────────────────────────────────────────── */
+.tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2.5rem;
+}
+
+.tab-btn {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  margin-bottom: -1px;
+}
+
+.tab-btn:hover { color: var(--cream); }
+.tab-btn.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.video-placeholder {
+  background: rgba(44,36,25,0.6);
+  border: 1px solid var(--border);
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.6rem;
+  color: var(--muted);
+  font-size: 2.5rem;
+  transition: border-color 0.2s;
+}
+
+.video-placeholder:hover { border-color: var(--gold); }
+
+.video-placeholder .video-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ── Footer ─────────────────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+footer p {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+footer a { color: var(--gold); text-decoration: none; }
+footer a:hover { color: var(--gold-lt); }
+
+/* ── Animations ─────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeUp 0.7s ease both;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  nav { padding: 0 1.2rem; }
+  .nav-links { gap: 1rem; }
+  .hero-content { padding: 4rem 1.5rem; }
+  .page-header { padding: 3rem 1.5rem 2rem; }
+  section { padding: 3rem 1.5rem; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .photo-grid { grid-template-columns: 1fr 1fr; }
+  .photo-item:first-child { grid-column: span 2; }
+  footer { padding: 2rem 1.5rem; }
+  .tourn-banner { padding: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  .nav-links { gap: 0.7rem; }
+  .nav-links a { font-size: 0.62rem; }
+  .photo-grid { grid-template-columns: 1fr; }
+  .photo-item:first-child { grid-column: span 1; }
+}

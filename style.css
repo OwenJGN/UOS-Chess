@@ -7,7 +7,7 @@
   --surface:    #f0ece2;
   --ink:        #0d0c0a;
   --ink-2:      #2a2620;
-  --ink-3:      #5a5448;
+  --ink-3:      #927777;
   --gold:       #b8933a;
   --gold-lt:    #d4aa55;
   --gold-pale:  #f5ecd4;
@@ -1322,19 +1322,11 @@ footer a:hover { color: var(--gold-lt); }
 
 /* ── Sussex Uni Logo ─────────────────────────────────────────── */
 .sussex-logo {
-  height: 36px;
+  height: 40px;
   width: auto;
-  opacity: 0.75;
-  transition: opacity 0.2s;
-  filter: var(--logo-filter, none);
-}
-
-[data-theme="dark"] .sussex-logo,
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .sussex-logo {
-    filter: brightness(0) invert(1);
-    opacity: 0.55;
-  }
+  border: 1px;
+  border-width: 3px;
+  border-color: #003b49;
 }
 
 /* ── Social Links Bar ────────────────────────────────────────── */
@@ -1428,3 +1420,4 @@ footer a:hover { color: var(--gold-lt); }
   .sticky-notes { grid-template-columns: 1fr; }
   .notable-grid { grid-template-columns: 1fr 1fr; }
 }
+

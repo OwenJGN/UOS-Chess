@@ -10,13 +10,17 @@
 
   <!-- Navigation -->
   <nav>
-    <a href="index.html" class="nav-brand"><span>♟</span> UOS Chess</a>
+    <div style="display:flex; align-items:center; gap:1.2rem;">
+      <a href="index.html" class="nav-brand"><span>♟</span> UOS Chess</a>
+    </div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="tournament.html">Tournament</a></li>
       <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="donate.html">Donate</a></li>
       <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
+    <button class="theme-toggle" id="themeToggle" title="Toggle dark/light mode">🌙</button>
   </nav>
 
   <div class="page">
@@ -51,7 +55,8 @@
           </div>
           <div class="contact-item">
             <span class="label">Club Night Location</span>
-            <p>Fulton 214, Univeristy Of Sussex</p>
+            <p>Fulton 214, University of Sussex</p>
+            <p style="color:var(--ink-3); font-size:0.9rem; margin-top:0.3rem;">Brighton, BN1 9RH</p>
             <p style="color:var(--ink-3); font-size:0.9rem; margin-top:0.3rem;">Every Tuesday, 6pm–9pm during term time.</p>
           </div>
         </div>
@@ -70,6 +75,7 @@
             </div>
             <div class="form-group">
               <label for="subject">Subject</label>
+              <input type="text" id="subject" placeholder="e.g. Tournament entry question" />
             </div>
             <div class="form-group">
               <label for="message">Message</label>
@@ -83,7 +89,19 @@
         </div>
       </div>
     </section>
-   
+
+    <!-- Social Media -->
+    <section style="padding-top:0;">
+      <p class="section-label">Follow Us</p>
+      <h2 class="section-title">Social Media</h2>
+      <p style="color:var(--ink-3); margin-bottom:1.5rem;">Stay up to date with results, announcements, and chess content.</p>
+      <div class="social-bar">
+        <a href="https://www.instagram.com/sussexunichess" class="social-btn" target="_blank">📸 @sussexunichess</a>
+        <a href="https://x.com/suchesstourneys" class="social-btn" target="_blank">𝕏 @SUChessTourneys</a>
+        <a href="mailto:hellosuchess@gmail.com" class="social-btn">✉ hellosuchess@gmail.com</a>
+      </div>
+    </section>
+
   </div>
 
   <!-- Footer -->
@@ -99,6 +117,30 @@
   </footer>
 
   <script>
+    (function() {
+      const stored = localStorage.getItem('uos-theme');
+      const hour = new Date().getHours();
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const isNight = hour >= 20 || hour < 7;
+      const theme = stored || (isNight || prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+    document.addEventListener('DOMContentLoaded', function() {
+      const btn = document.getElementById('themeToggle');
+      if (btn) {
+        function updateBtn() {
+          btn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+        }
+        updateBtn();
+        btn.addEventListener('click', function() {
+          const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem('uos-theme', next);
+          updateBtn();
+        });
+      }
+    });
+
     function submitForm() {
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();

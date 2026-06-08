@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Archive — UOS Chess Society</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div style="display:flex; align-items:center; gap:1.2rem;">
+      <a href="index.html" class="nav-brand"><span>♟</span> UOS Chess</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tournament.html">Tournament</a></li>
+      <li><a href="archive.html" class="active">Archive</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="donate.html">Donate</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" title="Toggle dark/light mode">🌙</button>
+  </nav>
+
+  <div class="page">
+
+    <!-- Page Header -->
+    <div class="page-header" data-icon="📜">
+      <p class="section-label" style="margin-bottom:0.8rem;">UOS Chess Society</p>
+      <h1>Congress Archive</h1>
+      <p style="color:rgba(255,255,255,0.7); margin-top:1rem; font-size:1.1rem;">
+        Results, prize winners, and notable players from every Sussex University Congress.
+      </p>
+      <div style="display:flex; gap:1rem; margin-top:1.8rem; flex-wrap:wrap;">
+        <a href="#results" class="btn btn-solid">Results →</a>
+        <a href="#hall-of-fame" class="btn">Hall of Fame</a>
+      </div>
+    </div>
+
+    <!-- Results Archive -->
+    <section id="results">
+      <p class="section-label">Results</p>
+      <h2 class="section-title">Results of Previous Congresses</h2>
+      <p style="color:var(--ink-3); max-width:650px; margin-bottom:2rem;">
+        Full prize lists from each edition of the Sussex University Chess Congress.
+      </p>
+
+      <div class="tabs">
+        <button class="tab-btn active" onclick="showArchive('arch2025', this)">2025 — 4th</button>
+        <button class="tab-btn" onclick="showArchive('arch2024', this)">2024 — 3rd</button>
+        <button class="tab-btn" onclick="showArchive('arch2023', this)">2023 — 2nd</button>
+        <button class="tab-btn" onclick="showArchive('arch2022', this)">2022 — 1st</button>
+      </div>
+
+      <div id="arch2025" class="tab-content active">
+        <div class="archive-year">
+          <h3>4th Sussex University Chess Congress — 2025</h3>
+          <p class="year-meta">Add final results once confirmed — Owen/James to populate</p>
+          <table class="results-table">
+            <thead>
+              <tr><th>Place</th><th>Player</th><th>Rating</th><th>Score</th><th>Section</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1st</td><td>TBC — Add winner</td><td>—</td><td>—/5</td><td>U2050</td></tr>
+              <tr><td>2nd</td><td>TBC</td><td>—</td><td>—/5</td><td>U2050</td></tr>
+              <tr><td>3rd</td><td>TBC</td><td>—</td><td>—/5</td><td>U2050</td></tr>
+              <tr><td>1st</td><td>TBC — Add winner</td><td>—</td><td>—/5</td><td>U1700</td></tr>
+              <tr><td>2nd</td><td>TBC</td><td>—</td><td>—/5</td><td>U1700</td></tr>
+              <tr><td>1st</td><td>TBC — Add winner</td><td>—</td><td>—/5</td><td>U1300</td></tr>
+              <tr><td>2nd</td><td>TBC</td><td>—</td><td>—/5</td><td>U1300</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="arch2024" class="tab-content">
+        <div class="archive-year">
+          <h3>3rd Sussex University Chess Congress — 2024</h3>
+          <p class="year-meta">Add final results once confirmed</p>
+          <table class="results-table">
+            <thead>
+              <tr><th>Place</th><th>Player</th><th>Rating</th><th>Score</th><th>Section</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1st</td><td>TBC — Add winner</td><td>—</td><td>—/5</td><td>U2050</td></tr>
+              <tr><td>2nd</td><td>TBC</td><td>—</td><td>—/5</td><td>U2050</td></tr>
+              <tr><td>3rd</td><td>TBC</td><td>—</td><td>—/5</td><td>U2050</td></tr>
+              <tr><td>1st</td><td>TBC — Add winner</td><td>—</td><td>—/5</td><td>U1700</td></tr>
+              <tr><td>1st</td><td>TBC — Add winner</td><td>—</td><td>—/5</td><td>U1300</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="arch2023" class="tab-content">
+        <div class="archive-year">
+          <h3>2nd Sussex University Chess Congress — 2023</h3>
+          <p class="year-meta">Add final results once confirmed</p>
+          <table class="results-table">
+            <thead>
+              <tr><th>Place</th><th>Player</th><th>Rating</th><th>Score</th><th>Section</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1st</td><td>TBC — Add winner</td><td>—</td><td>—/5</td><td>Open</td></tr>
+              <tr><td>2nd</td><td>TBC</td><td>—</td><td>—/5</td><td>Open</td></tr>
+              <tr><td>3rd</td><td>TBC</td><td>—</td><td>—/5</td><td>Open</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="arch2022" class="tab-content">
+        <div class="archive-year">
+          <h3>1st Sussex University Chess Congress — 2022</h3>
+          <p class="year-meta">Add final results once confirmed</p>
+          <table class="results-table">
+            <thead>
+              <tr><th>Place</th><th>Player</th><th>Rating</th><th>Score</th><th>Section</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1st</td><td>TBC — Add winner</td><td>—</td><td>—/5</td><td>Open</td></tr>
+              <tr><td>2nd</td><td>TBC</td><td>—</td><td>—/5</td><td>Open</td></tr>
+              <tr><td>3rd</td><td>TBC</td><td>—</td><td>—/5</td><td>Open</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <p style="color:var(--ink-3); font-size:0.85rem; font-style:italic; margin-top:1.5rem;">
+        📋 Populate with real results from ECF/FIDE grading lists — Owen/James to confirm.
+      </p>
+    </section>
+
+    <!-- Hall of Fame / Notable Players -->
+    <section id="hall-of-fame" style="padding-top:0;">
+      <p class="section-label">Hall of Fame</p>
+      <h2 class="section-title">Notable Players &amp; Past Winners</h2>
+      <p style="color:var(--ink-3); max-width:650px; margin-bottom:0;">
+        Titled players and notable names who have competed at Sussex University congresses over the years.
+      </p>
+
+      <div class="notable-grid">
+        <div class="notable-card">
+          <div class="notable-avatar">♛</div>
+          <h4>Past Winner</h4>
+          <p class="notable-title">Champion, U2050 — 2025</p>
+          <p>Add name and a line about them here.</p>
+        </div>
+        <div class="notable-card">
+          <div class="notable-avatar">♟</div>
+          <h4>Past Winner</h4>
+          <p class="notable-title">Champion, U1700 — 2025</p>
+          <p>Add name and a line about them here.</p>
+        </div>
+        <div class="notable-card">
+          <div class="notable-avatar">🏆</div>
+          <h4>Past Winner</h4>
+          <p class="notable-title">Champion, U1300 — 2025</p>
+          <p>Add name and a line about them here.</p>
+        </div>
+        <div class="notable-card">
+          <div class="notable-avatar">⭐</div>
+          <h4>Notable Visitor</h4>
+          <p class="notable-title">Titled Player</p>
+          <p>Add any GMs, IMs, or titled players who have attended.</p>
+        </div>
+        <div class="notable-card">
+          <div class="notable-avatar">♛</div>
+          <h4>Past Winner</h4>
+          <p class="notable-title">Champion, Open — 2024</p>
+          <p>Add name and a line about them here.</p>
+        </div>
+        <div class="notable-card">
+          <div class="notable-avatar">♛</div>
+          <h4>Past Winner</h4>
+          <p class="notable-title">Champion, Open — 2023</p>
+          <p>Add name and a line about them here.</p>
+        </div>
+        <div class="notable-card">
+          <div class="notable-avatar">♛</div>
+          <h4>Past Winner</h4>
+          <p class="notable-title">Champion, Open — 2022</p>
+          <p>Add name and a line about them here.</p>
+        </div>
+      </div>
+      <p style="color:var(--ink-3); font-size:0.85rem; font-style:italic; margin-top:1.5rem;">
+        🏅 Populate with real winner names and poster images — Owen/James to add from records.
+      </p>
+    </section>
+
+    <!-- Archive link back -->
+    <section style="padding-top:0; padding-bottom:4rem;">
+      <div style="display:flex; gap:1.5rem; flex-wrap:wrap;">
+        <a href="tournament.html" class="btn btn-solid">2026 Tournaments →</a>
+        <a href="gallery.html" class="btn">View Gallery →</a>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 UOS Chess Society · University of Sussex</p>
+    <p>
+      <a href="mailto:hellosuchess@gmail.com">hellosuchess@gmail.com</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.instagram.com/sussexunichess">Instagram</a>
+      &nbsp;·&nbsp;
+      <a href="https://x.com/suchesstourneys">X/Twitter</a>
+    </p>
+  </footer>
+
+<script>
+  (function() {
+    const stored = localStorage.getItem('uos-theme');
+    const hour = new Date().getHours();
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isNight = hour >= 20 || hour < 7;
+    const theme = stored || (isNight || prefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const btn = document.getElementById('themeToggle');
+    if (!btn) return;
+    function updateBtn() {
+      btn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+    }
+    updateBtn();
+    btn.addEventListener('click', function() {
+      const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('uos-theme', next);
+      updateBtn();
+    });
+  });
+
+  function showArchive(id, btn) {
+    document.querySelectorAll('#results .tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('#results .tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
+</body>
+</html>

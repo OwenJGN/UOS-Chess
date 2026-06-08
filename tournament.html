@@ -10,13 +10,18 @@
 
   <!-- Navigation -->
   <nav>
-    <a href="index.html" class="nav-brand"><span>♟</span> UOS Chess</a>
+    <div style="display:flex; align-items:center; gap:1.2rem;">
+      <a href="index.html" class="nav-brand"><span>♟</span> UOS Chess</a>
+    </div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="tournament.html" class="active">Tournament</a></li>
+      <li><a href="archive.html">Archive</a></li>
       <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="donate.html">Donate</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+    <button class="theme-toggle" id="themeToggle" title="Toggle dark/light mode">🌙</button>
   </nav>
 
   <div class="page">
@@ -61,7 +66,7 @@
         <div class="info-box">
           <h3>Venue &amp; Facilities</h3>
           <p>
-            Student Centre, University of Sussex<br><br>
+            Student Centre, University of Sussex<br>Brighton, BN1 9RH<br><br>
             Bring own refreshments but they are available on site<br>
           </p>
         </div>
@@ -240,7 +245,7 @@
         <div class="info-box">
           <h3>Venue &amp; Facilities</h3>
           <p>
-            Student Centre, University of Sussex<br><br>
+            Student Centre, University of Sussex<br>Brighton, BN1 9RH<br><br>
             Bring own refreshments but they are available on site<br>
           </p>
         </div>
@@ -373,7 +378,7 @@
         <div class="info-box">
           <h3>Venue &amp; Facilities</h3>
           <p>
-            Student Centre, University of Sussex<br><br>
+            Student Centre, University of Sussex<br>Brighton, BN1 9RH<br><br>
           </p>
         </div>
       </div>
@@ -410,6 +415,99 @@
       </table>
 </section>
 
+  <div class="page">
+
+    <!-- Getting Here / Parking -->
+    <section id="getting-here">
+      <p class="section-label">Venue</p>
+      <h2 class="section-title">Getting Here</h2>
+      <p style="color:var(--ink-3); max-width:650px; margin-bottom:0.5rem;">
+        Student Centre, University of Sussex, Brighton, BN1 9RH
+      </p>
+
+      <!-- Google Maps embed -->
+      <div class="map-wrap">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2521.6!2d-0.0882!3d50.8662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4875850d29ca6d59%3A0x3f2e0aab6be2e20!2sUniversity%20of%20Sussex!5e0!3m2!1sen!2suk!4v1"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <div class="getting-here-grid">
+        <div class="transport-card">
+          <span class="t-icon">🚗</span>
+          <h4>By Car &amp; Parking</h4>
+          <ul>
+            <li>Postcode for sat-nav: <strong>BN1 9RH</strong></li>
+            <li>Pay &amp; display parking available on campus (Gardner Arts car park recommended)</li>
+            <li>Free parking on Sundays in most campus car parks</li>
+            <li><em>Parking info from previous congresses — James to confirm details</em></li>
+          </ul>
+        </div>
+        <div class="transport-card">
+          <span class="t-icon">🚂</span>
+          <h4>By Train</h4>
+          <ul>
+            <li>Nearest station: <strong>Falmer</strong> (5-minute walk to campus)</li>
+            <li>Direct trains from Brighton (6 min) and Lewes (10 min)</li>
+            <li>Regular Southern Rail services from London Victoria (~1 hr)</li>
+          </ul>
+        </div>
+        <div class="transport-card">
+          <span class="t-icon">🚌</span>
+          <h4>By Bus</h4>
+          <ul>
+            <li>25 and 25X from Brighton city centre stop at the university</li>
+            <li>Journey time approx. 25–30 minutes from Brighton Station</li>
+          </ul>
+        </div>
+        <div class="transport-card">
+          <span class="t-icon">✈️</span>
+          <h4>From Further Afield</h4>
+          <ul>
+            <li>Gatwick Airport: ~35 min by train to Falmer via Brighton</li>
+            <li>Discounted accommodation available for Masters participants (first come, first served)</li>
+            <li>Contact us for accommodation recommendations</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Side Events (Summer School + Arbiter's Course only — community events moved to home page) -->
+    <section style="padding-top:0;">
+      <p class="section-label">Around the Tournament</p>
+      <h2 class="section-title">Side Events &amp; Activities</h2>
+
+      <div class="side-event-grid">
+        <div class="side-event-card">
+          <span class="event-icon">♟</span>
+          <h4>Summer Chess School</h4>
+          <p class="event-date">Dates TBC · Student Centre, Sussex</p>
+          <p>An intensive coaching programme for juniors and improvers. Sessions led by experienced coaches covering openings, endgames, and tactical training. All abilities welcome.</p>
+          <a href="contact.html" class="btn" style="font-size:0.65rem; padding:0.6rem 1.2rem; margin-top:1rem; display:inline-flex;">Enquire →</a>
+        </div>
+        <div class="side-event-card">
+          <span class="event-icon">🏛</span>
+          <h4>Arbiter's Course</h4>
+          <p class="event-date">Dates TBC · University of Sussex</p>
+          <p>An ECF-accredited arbiter training course run alongside the congress. Ideal for those wishing to qualify as a tournament arbiter. Limited places — register early.</p>
+          <a href="contact.html" class="btn" style="font-size:0.65rem; padding:0.6rem 1.2rem; margin-top:1rem; display:inline-flex;">Enquire →</a>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-top:0; padding-bottom:3rem;">
+      <div style="background:var(--gold-bg); border:1px solid var(--border); border-left:4px solid var(--gold); padding:1.8rem 2.2rem; border-radius:4px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+        <div>
+          <p style="font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold); margin-bottom:0.4rem;">Past Events</p>
+          <p style="color:var(--ink-2); font-size:1rem;">Read about our Parents &amp; Supporters Panel and Charity Match on the home page.</p>
+        </div>
+        <a href="index.html#community" class="btn btn-solid">View on Home →</a>
+      </div>
+    </section>
+
+  </div><!-- end .page -->
+
    <!-- Footer -->
   <footer>
     <p>© 2026 UOS Chess Society · University of Sussex</p>
@@ -422,6 +520,37 @@
     </p>
   </footer>
 
+<script>
+  // Dark mode
+  (function() {
+    const stored = localStorage.getItem('uos-theme');
+    const hour = new Date().getHours();
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isNight = hour >= 20 || hour < 7;
+    const theme = stored || (isNight || prefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
 
+  document.addEventListener('DOMContentLoaded', function() {
+    const btn = document.getElementById('themeToggle');
+    if (!btn) return;
+    function updateBtn() {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      btn.textContent = isDark ? '☀️' : '🌙';
+    }
+    updateBtn();
+    btn.addEventListener('click', function() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('uos-theme', next);
+      updateBtn();
+    });
+  });
+
+  function showArchive(id, btn) {
+    // Archive moved to archive.html
+  }
+</script>
 </body>
 </html>

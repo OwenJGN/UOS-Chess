@@ -10,13 +10,19 @@
 
   <!-- Navigation -->
   <nav>
-    <a href="index.html" class="nav-brand"><span>♟</span> UOS Chess</a>
+    <div style="display:flex; align-items:center; gap:1.2rem;">
+      <!-- Replace with real Sussex logo: <img src="sussex-logo.png" class="sussex-logo" alt="University of Sussex"> -->
+      <a href="index.html" class="nav-brand"><span>♟</span> UOS Chess</a>
+    </div>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="tournament.html">Tournament</a></li>
+      <li><a href="archive.html">Archive</a></li>
       <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="donate.html">Donate</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+    <button class="theme-toggle" id="themeToggle" title="Toggle dark/light mode">🌙</button>
   </nav>
 
   <div class="page">
@@ -32,10 +38,16 @@
         <h1>UOS <em>Chess</em><br>Society</h1>
         <p class="hero-sub">
           Compete, learn, and socialise. Weekly club nights, socials,
-          and open tournaments to univeristy and non university students — all welcome, all abilities.
+          and open tournaments for university and non-university students — all welcome, all abilities.
         </p>
         <div style="display:flex; gap:1rem; flex-wrap:wrap;">
           <a href="tournament.html" class="btn btn-solid">5th Sussex University Tournament →</a>
+          <a href="donate.html" class="btn">Support Us ♥</a>
+        </div>
+        <div class="social-bar">
+          <a href="https://www.instagram.com/sussexunichess" class="social-btn" target="_blank">📸 Instagram</a>
+          <a href="https://x.com/suchesstourneys" class="social-btn" target="_blank">𝕏 Twitter/X</a>
+          <a href="mailto:hellosuchess@gmail.com" class="social-btn">✉ Email Us</a>
         </div>
       </div>
     </div>
@@ -90,7 +102,7 @@
       <div class="tourn-banner">
         <div>
           <h3>5th Sussex University Tournament </h3>
-          <p class="date">♟ 24 – 26th July 2026 &nbsp;·&nbsp; Student Centre, University Of Sussex</p>
+          <p class="date">♟ 24 – 26th July 2026 &nbsp;·&nbsp; Student Centre, University of Sussex</p>
           <p style="color:var(--ink-3); font-size:1rem; margin-top:0.8rem; max-width:500px;">
             Open to all. Sections include U1300(ECF Rated Only), U1700 and U2050 (Both FIDE & ECF Rated).
             £1000 Prize Fund. 
@@ -139,6 +151,92 @@
       </div>
     </section>
 
+    <!-- Voices from Previous Congresses -->
+    <section>
+      <p class="section-label">What People Say</p>
+      <h2 class="section-title">Voices from Previous Congresses</h2>
+
+      <div class="sticky-notes">
+        <div class="sticky sticky-yellow">
+          <blockquote>"A brilliantly run tournament — great organisation, friendly atmosphere, and superb playing conditions. Will definitely be returning."</blockquote>
+          <cite>— Participant, 4th Sussex University Congress, 2025</cite>
+        </div>
+        <div class="sticky sticky-blue">
+          <blockquote>"One of the best-value congresses in the South East. The student volunteers make it special — real passion for the game."</blockquote>
+          <cite>— Participant, 3rd Sussex University Congress, 2024</cite>
+        </div>
+        <div class="sticky sticky-green">
+          <blockquote>"Lovely venue, well-organised, and a real community feel. Fantastic to see chess thriving at Sussex."</blockquote>
+          <cite>— Participant, 3rd Sussex University Congress, 2024</cite>
+        </div>
+        <div class="sticky sticky-pink">
+          <blockquote>"Great first congress experience for my child. Well-supervised, welcoming, and they came home wanting to play more chess!"</blockquote>
+          <cite>— Parent, 4th Sussex University Congress, 2025</cite>
+        </div>
+      </div>
+      <p style="color:var(--ink-3); font-size:0.85rem; font-style:italic; margin-top:1.5rem;">
+        📝 Add real quotes here — Owen/James to source from feedback forms and social media.
+      </p>
+    </section>
+
+    <!-- Tournament Reports -->
+    <section style="padding-top:0;">
+      <p class="section-label">Press &amp; Reports</p>
+      <h2 class="section-title">Tournament Reports</h2>
+      <p style="color:var(--ink-3); margin-bottom:2rem; max-width:650px;">
+        Match reports and write-ups from previous Sussex University congresses.
+      </p>
+
+      <div class="report-card">
+        <span class="report-icon">📰</span>
+        <div>
+          <p class="report-meta">4th Sussex University Congress · 2025</p>
+          <h4>Report by Jude Shearsby</h4>
+          <p>A detailed write-up of the 4th congress — results, standout games, and reflections on a fantastic weekend of chess at Sussex.</p>
+          <a href="https://x.com/suchesstourneys" class="btn" style="font-size:0.65rem; padding:0.6rem 1.2rem;" target="_blank">Read on X/Twitter →</a>
+        </div>
+      </div>
+
+      <div class="report-card">
+        <span class="report-icon">📰</span>
+        <div>
+          <p class="report-meta">3rd Sussex University Congress · 2024</p>
+          <h4>Report by Kenneth Hobson</h4>
+          <p>Kenneth Hobson's report covering the 3rd annual congress — notable games, prize winners, and the growing reputation of Sussex's tournament series.</p>
+          <a href="https://x.com/suchesstourneys" class="btn" style="font-size:0.65rem; padding:0.6rem 1.2rem;" target="_blank">Read on X/Twitter →</a>
+        </div>
+      </div>
+
+      <p style="color:var(--ink-3); font-size:0.85rem; font-style:italic; margin-top:1rem;">
+        🔗 Link each report directly to the relevant X/Twitter posts once confirmed.
+      </p>
+    </section>
+
+    <!-- Community Events: Parents Panel + Charity Match -->
+    <section id="community" style="padding-top:0;">
+      <p class="section-label">Community</p>
+      <h2 class="section-title">Beyond the Board</h2>
+      <p style="color:var(--ink-3); max-width:650px; margin-bottom:0;">
+        Chess at Sussex is about more than just the games — we run events that bring the whole community together.
+      </p>
+
+      <div class="side-event-grid">
+        <div class="side-event-card">
+          <span class="event-icon">👨‍👩‍👧</span>
+          <h4>Parents &amp; Supporters Panel</h4>
+          <p class="event-date">Past Event · 4th Congress, 2025</p>
+          <p>An informal panel discussion for parents of junior players, covering how to support a young chess player's development, ECF grading, and the junior chess pathway in the UK.</p>
+        </div>
+        <div class="side-event-card">
+          <span class="event-icon">♥</span>
+          <h4>Charity Match</h4>
+          <p class="event-date">Past Event · 4th Congress, 2025</p>
+          <p>A special exhibition match raising funds for charity, featuring notable local players. A highlight of the social side of the congress — we hope to run it again in 2026.</p>
+          <a href="donate.html" class="btn" style="font-size:0.65rem; padding:0.6rem 1.2rem; margin-top:1rem; display:inline-flex;">Support Us →</a>
+        </div>
+      </div>
+    </section>
+
   </div>
 
    <!-- Footer -->
@@ -155,4 +253,33 @@
 
 
 </body>
+<script>
+  // Dark/light mode: auto-sets based on time of day, allows manual override
+  (function() {
+    const stored = localStorage.getItem('uos-theme');
+    const hour = new Date().getHours();
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isNight = hour >= 20 || hour < 7;
+    const theme = stored || (isNight || prefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const btn = document.getElementById('themeToggle');
+    if (!btn) return;
+    function updateBtn() {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      btn.textContent = isDark ? '☀️' : '🌙';
+      btn.title = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+    }
+    updateBtn();
+    btn.addEventListener('click', function() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('uos-theme', next);
+      updateBtn();
+    });
+  });
+</script>
 </html>

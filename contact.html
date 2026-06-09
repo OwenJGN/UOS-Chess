@@ -8,20 +8,8 @@
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <div style="display:flex; align-items:center; gap:1.2rem;">
-      <a href="index.html" class="nav-brand"><span>♟</span> UOS Chess</a>
-    </div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="tournament.html">Tournament</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="donate.html">Donate</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
-    </ul>
-    <button class="theme-toggle" id="themeToggle" title="Toggle dark/light mode">🌙</button>
-  </nav>
+  <!-- Navigation (injected by components.js) -->
+  <div id="nav-placeholder"></div>
 
   <div class="page">
 
@@ -71,7 +59,7 @@
             </div>
             <div class="form-group">
               <label for="email">Email Address</label>
-              <input type="email" id="email" placeholder="e.g. j.smith@soton.ac.uk" />
+              <input type="email" id="email" placeholder="e.g. j.smith@sussex.ac.uk" />
             </div>
             <div class="form-group">
               <label for="subject">Subject</label>
@@ -104,43 +92,11 @@
 
   </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2026 UOS Chess Society · University of Sussex</p>
-    <p>
-      <a href="mailto:hellosuchess@gmail.com">hellosuchess@gmail.com</a>
-      &nbsp;·&nbsp;
-      <a href="https://www.instagram.com/sussexunichess">Instagram</a>
-      &nbsp;·&nbsp;
-      <a href="https://x.com/suchesstourneys">X/Twitter</a>
-    </p>
-  </footer>
+  <!-- Footer (injected by components.js) -->
+  <div id="footer-placeholder"></div>
 
+  <script src="components.js"></script>
   <script>
-    (function() {
-      const stored = localStorage.getItem('uos-theme');
-      const hour = new Date().getHours();
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const isNight = hour >= 20 || hour < 7;
-      const theme = stored || (isNight || prefersDark ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', theme);
-    })();
-    document.addEventListener('DOMContentLoaded', function() {
-      const btn = document.getElementById('themeToggle');
-      if (btn) {
-        function updateBtn() {
-          btn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
-        }
-        updateBtn();
-        btn.addEventListener('click', function() {
-          const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-          document.documentElement.setAttribute('data-theme', next);
-          localStorage.setItem('uos-theme', next);
-          updateBtn();
-        });
-      }
-    });
-
     function submitForm() {
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
@@ -156,6 +112,5 @@
       msg.style.display = 'block';
     }
   </script>
-
 </body>
 </html>

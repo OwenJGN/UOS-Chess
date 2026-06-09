@@ -8,20 +8,8 @@
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <div style="display:flex; align-items:center; gap:1.2rem;">
-      <a href="index.html" class="nav-brand"><span>♟</span> UOS Chess</a>
-    </div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="tournament.html">Tournament</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="donate.html" class="active">Donate</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <button class="theme-toggle" id="themeToggle" title="Toggle dark/light mode">🌙</button>
-  </nav>
+  <!-- Navigation (injected by components.js) -->
+  <div id="nav-placeholder"></div>
 
   <!-- Hero -->
   <div class="donation-hero">
@@ -56,7 +44,6 @@
           <h3>Society Growth</h3>
           <p>Help us run more socials, recruit new members, and grow the chess community at Sussex and across the South East.</p>
         </div>
-        
       </div>
     </section>
 
@@ -72,26 +59,22 @@
         <div class="donation-tier">
           <div class="tier-amount">£5</div>
           <h4>Pawn</h4>
-          <p>Covers the cost of a set of chessmen for a club night session.</p>
-          <a href="https://www.paypal.com" class="btn btn-solid" target="_blank" style="width:100%; justify-content:center;">Donate £5</a>
+          <a href="https://www.paypal.com/paypalme/hhonarvar?country.x=GB&locale.x=en_GB" class="btn btn-solid" target="_blank" style="width:100%; justify-content:center;">Donate £5</a>
         </div>
         <div class="donation-tier">
           <div class="tier-amount">£20</div>
           <h4>Knight</h4>
-          <p>Subsidises one student's entry fee to a tournament section.</p>
-          <a href="https://www.paypal.com" class="btn btn-solid" target="_blank" style="width:100%; justify-content:center;">Donate £20</a>
+          <a href="https://www.paypal.com/paypalme/hhonarvar?country.x=GB&locale.x=en_GB" class="btn btn-solid" target="_blank" style="width:100%; justify-content:center;">Donate £20</a>
         </div>
         <div class="donation-tier">
           <div class="tier-amount">£50</div>
           <h4>Rook</h4>
-          <p>Funds a coaching session for junior or improver members.</p>
-          <a href="https://www.paypal.com" class="btn btn-solid" target="_blank" style="width:100%; justify-content:center;">Donate £50</a>
+          <a href="https://www.paypal.com/paypalme/hhonarvar?country.x=GB&locale.x=en_GB" class="btn btn-solid" target="_blank" style="width:100%; justify-content:center;">Donate £50</a>
         </div>
         <div class="donation-tier">
           <div class="tier-amount">Any</div>
           <h4>Your Choice</h4>
-          <p>Donate any amount — use the link below to choose your own contribution.</p>
-          <a href="https://www.paypal.com" class="btn btn-solid" target="_blank" style="width:100%; justify-content:center;">Custom Amount</a>
+          <a href="https://www.paypal.com/paypalme/hhonarvar?country.x=GB&locale.x=en_GB" class="btn btn-solid" target="_blank" style="width:100%; justify-content:center;">Custom Amount</a>
         </div>
       </div>
 
@@ -108,50 +91,14 @@
         </div>
       </div>
 
-      <p style="color:var(--ink-3); font-size:0.85rem; font-style:italic; margin-top:1.5rem;">
-        💳 Replace PayPal links above with your actual donation platform (PayPal, Stripe, GoFundMe, etc.) — Owen to confirm.
-      </p>
+
     </section>
 
   </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2026 UOS Chess Society · University of Sussex</p>
-    <p>
-      <a href="mailto:hellosuchess@gmail.com">hellosuchess@gmail.com</a>
-      &nbsp;·&nbsp;
-      <a href="https://www.instagram.com/sussexunichess">Instagram</a>
-      &nbsp;·&nbsp;
-      <a href="https://x.com/suchesstourneys">X/Twitter</a>
-    </p>
-  </footer>
+  <!-- Footer (injected by components.js) -->
+  <div id="footer-placeholder"></div>
 
-<script>
-  (function() {
-    const stored = localStorage.getItem('uos-theme');
-    const hour = new Date().getHours();
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const isNight = hour >= 20 || hour < 7;
-    const theme = stored || (isNight || prefersDark ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', theme);
-  })();
-  document.addEventListener('DOMContentLoaded', function() {
-    const btn = document.getElementById('themeToggle');
-    if (!btn) return;
-    function updateBtn() {
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      btn.textContent = isDark ? '☀️' : '🌙';
-    }
-    updateBtn();
-    btn.addEventListener('click', function() {
-      const current = document.documentElement.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('uos-theme', next);
-      updateBtn();
-    });
-  });
-</script>
+  <script src="components.js"></script>
 </body>
 </html>

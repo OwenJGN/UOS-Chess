@@ -8,22 +8,8 @@
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <div style="display:flex; align-items:center; gap:1.2rem;">
-      <img src="University_of_Sussex_Logo_svg.png" class="sussex-logo" alt="University of Sussex" />
-      <a href="index.html" class="nav-brand"><span>♟</span> UOS Chess</a>
-    </div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="tournament.html" class="active">Tournament</a></li>
-      <li><a href="archive.html">Archive</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="donate.html">Donate</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <button class="theme-toggle" id="themeToggle" title="Toggle dark/light mode">🌙</button>
-  </nav>
+  <!-- Navigation (injected by components.js) -->
+  <div id="nav-placeholder"></div>
 
   <div class="page">
 
@@ -440,7 +426,7 @@
           <ul>
             <li>Postcode for sat-nav: <strong>BN1 9RH</strong></li>
             <li>Pay &amp; display parking available on campus </li>
-            <li><em>Parking info from previous congresses — James to confirm details</em></li>
+
           </ul>
         </div>
         <div class="transport-card">
@@ -497,49 +483,9 @@
 
   </div><!-- end .page -->
 
-   <!-- Footer -->
-  <footer>
-    <p>© 2026 UOS Chess Society · University of Sussex</p>
-    <p>
-      <a href="mailto:hellosuchess@gmail.com">hellosuchess@gmail.com</a>
-      &nbsp;·&nbsp;
-      <a href="https://instagram.com/sussexunichess">Instagram</a>
-      &nbsp;·&nbsp;
-      <a href="https://x.com/suchesstourneys">X/Twitter</a>
-    </p>
-  </footer>
+  <!-- Footer (injected by components.js) -->
+  <div id="footer-placeholder"></div>
 
-<script>
-  // Dark mode
-  (function() {
-    const stored = localStorage.getItem('uos-theme');
-    const hour = new Date().getHours();
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const isNight = hour >= 20 || hour < 7;
-    const theme = stored || (isNight || prefersDark ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', theme);
-  })();
-
-  document.addEventListener('DOMContentLoaded', function() {
-    const btn = document.getElementById('themeToggle');
-    if (!btn) return;
-    function updateBtn() {
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      btn.textContent = isDark ? '☀️' : '🌙';
-    }
-    updateBtn();
-    btn.addEventListener('click', function() {
-      const current = document.documentElement.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('uos-theme', next);
-      updateBtn();
-    });
-  });
-
-  function showArchive(id, btn) {
-    // Archive moved to archive.html
-  }
-</script>
+  <script src="components.js"></script>
 </body>
 </html>

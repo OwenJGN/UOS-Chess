@@ -171,6 +171,45 @@ nav {
   background: #3d3830;
 }
 
+/* ── Hero (full-width title variant) ───────────────────────── */
+.hero-full {
+  justify-content: center;
+  min-height: 80vh;
+}
+
+/* Remove the right-side checkerboard panel for full-width layout */
+.hero-full::after { display: none; }
+
+.hero-content-full {
+  max-width: 1000px;
+  width: 100%;
+  text-align: center;
+  padding: 6rem 4rem;
+}
+
+.hero-title-full {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(3.8rem, 10vw, 8rem);
+  font-weight: 900;
+  line-height: 0.95;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25em;
+}
+
+.hero-title-full em {
+  font-style: italic;
+  color: var(--gold-lt);
+}
+
+.hero-full .hero-eyebrow { justify-content: center; }
+
+.hero-full .hero-sub {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 560px;
+}
+
 .hero-bg {
   position: absolute;
   inset: 0;
@@ -1324,9 +1363,8 @@ footer a:hover { color: var(--gold-lt); }
 .sussex-logo {
   height: 40px;
   width: auto;
-  border: 1px;
-  border-width: 3px;
-  border-color: #003b49;
+  border: 3px solid #1d6572; /* teal colour matching the logo text */
+  border-radius: 3px;
 }
 
 /* ── Social Links Bar ────────────────────────────────────────── */
@@ -1420,4 +1458,3 @@ footer a:hover { color: var(--gold-lt); }
   .sticky-notes { grid-template-columns: 1fr; }
   .notable-grid { grid-template-columns: 1fr 1fr; }
 }
-

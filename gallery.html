@@ -6,7 +6,6 @@
   <title>Gallery — UOS Chess Society</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Extended photo grid for gallery page */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -25,20 +24,8 @@
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <div style="display:flex; align-items:center; gap:1.2rem;">
-      <a href="index.html" class="nav-brand"><span>♟</span> UOS Chess</a>
-    </div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="tournament.html">Tournament</a></li>
-      <li><a href="gallery.html" class="active">Gallery</a></li>
-      <li><a href="donate.html">Donate</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <button class="theme-toggle" id="themeToggle" title="Toggle dark/light mode">🌙</button>
-  </nav>
+  <!-- Navigation (injected by components.js) -->
+  <div id="nav-placeholder"></div>
 
   <div class="page">
 
@@ -61,96 +48,36 @@
       <!-- Photos Tab -->
       <div id="photos" class="tab-content active">
         <p class="section-label" style="margin-bottom:1.5rem;">Club &amp; Society Photos</p>
-
         <div class="gallery-grid">
-          <div class="photo-item tall">
-            
-          </div>
-          <div class="photo-item">
-           
-          </div>
-          <div class="photo-item">
-
-          </div>
-          <div class="photo-item wide">
-            
-          </div>
-          <div class="photo-item">
-            
-          </div>
-          <div class="photo-item">
-            
-          </div>
-          <div class="photo-item">
-            
-          </div>
+          <div class="photo-item tall"></div>
+          <div class="photo-item"></div>
+          <div class="photo-item"></div>
+          <div class="photo-item wide"></div>
+          <div class="photo-item"></div>
+          <div class="photo-item"></div>
+          <div class="photo-item"></div>
         </div>
-
-       
       </div>
 
       <!-- Videos Tab -->
       <div id="videos" class="tab-content">
         <p class="section-label" style="margin-bottom:1.5rem;">Featured Videos</p>
-
         <div class="video-grid">
-          <!-- Replace src with real YouTube embed URLs -->
-          <div class="video-placeholder">
-            <span>▶</span>
-          </div>
-          <div class="video-placeholder">
-            <span>▶</span>
-          </div>
-          <div class="video-placeholder">
-            <span>▶</span>
-          </div>
-          <div class="video-placeholder">
-            <span>▶</span>
-          </div>
+          <div class="video-placeholder"><span>▶</span></div>
+          <div class="video-placeholder"><span>▶</span></div>
+          <div class="video-placeholder"><span>▶</span></div>
+          <div class="video-placeholder"><span>▶</span></div>
         </div>
-
-       
       </div>
-      </section>
+    </section>
 
-   <!-- Footer -->
-  <footer>
-    <p>© 2026 UOS Chess Society · University of Sussex</p>
-    <p>
-      <a href="mailto:hellosuchess@gmail.com">hellosuchess@gmail.com</a>
-      &nbsp;·&nbsp;
-      <a href="https://instagram.com/sussexunichess">Instagram</a>
-      &nbsp;·&nbsp;
-      <a href="https://x.com/suchesstourneys">X/Twitter</a>
-    </p>
-  </footer>
+  </div>
 
+  <!-- Footer (injected by components.js) -->
+  <div id="footer-placeholder"></div>
 
+  <script src="components.js"></script>
   <script>
-    (function() {
-      const stored = localStorage.getItem('uos-theme');
-      const hour = new Date().getHours();
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const isNight = hour >= 20 || hour < 7;
-      const theme = stored || (isNight || prefersDark ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', theme);
-    })();
-    document.addEventListener('DOMContentLoaded', function() {
-      const btn = document.getElementById('themeToggle');
-      if (btn) {
-        function updateBtn() {
-          btn.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
-        }
-        updateBtn();
-        btn.addEventListener('click', function() {
-          const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-          document.documentElement.setAttribute('data-theme', next);
-          localStorage.setItem('uos-theme', next);
-          updateBtn();
-        });
-      }
-    });
-
     function showTab(id, btn) {
       document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -158,6 +85,5 @@
       btn.classList.add('active');
     }
   </script>
-
 </body>
 </html>

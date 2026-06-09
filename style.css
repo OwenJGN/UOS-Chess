@@ -1681,3 +1681,86 @@ body {
 }
 
 /* (Mobile styles consolidated in the responsive block below) */
+/* ── Tournament section divider ──────────────────────────────── */
+.tournament-divider {
+  position: relative;
+  text-align: center;
+  margin: 0;
+  padding: 3rem 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tournament-divider::before {
+  content: '';
+  position: absolute;
+  left: 2rem;
+  right: 2rem;
+  top: 50%;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, var(--gold), var(--gold), transparent);
+  opacity: 0.5;
+}
+
+.tournament-divider span {
+  position: relative;
+  z-index: 1;
+  background: var(--bg);
+  padding: 0.5rem 1.5rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--border-dk);
+  border-radius: 20px;
+}
+
+/* ── Parking section ─────────────────────────────────────────── */
+.parking-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+
+.parking-card {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.8rem 2rem;
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+
+.parking-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.parking-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.parking-card h4 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.05rem;
+  color: var(--ink);
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.parking-card p {
+  font-size: 0.9rem;
+  color: var(--ink-3);
+  line-height: 1.6;
+}

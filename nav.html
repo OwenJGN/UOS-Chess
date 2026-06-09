@@ -1,9 +1,6 @@
 <!-- =====================================================
      nav.html — shared navigation partial
      Injected into every page by components.js
-     To mark the active page, components.js reads
-     the current filename and adds class="active"
-     automatically.
 ===================================================== -->
 <nav>
   <div style="display:flex; align-items:center; gap:1.2rem;">
@@ -18,5 +15,20 @@
     <li><a href="donate.html">Donate</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <button class="theme-toggle" id="themeToggle" title="Toggle dark/light mode">🌙</button>
+  <div style="display:flex; align-items:center; gap:0.6rem;">
+    <button class="theme-toggle" id="themeToggle" title="Toggle dark/light mode">🌙</button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
+<div class="nav-drawer" id="navDrawer" aria-hidden="true">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="tournament.html">Tournament</a></li>
+    <li><a href="archive.html">Archive</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="donate.html">Donate</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>

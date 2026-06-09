@@ -80,7 +80,7 @@
 
 /* ── Reset ─────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   background-color: var(--bg);
@@ -911,29 +911,263 @@ footer a:hover { color: var(--gold-lt); }
   margin: 0 auto 2rem;
 }
 
-/* ── Responsive ─────────────────────────────────────────────── */
-@media (max-width: 768px) {
-  nav { padding: 0 1.2rem; }
-  .nav-links { gap: 1.2rem; }
-  .hero-content { padding: 4rem 1.5rem; }
-  .hero-image-placeholder { display: none; }
-  .page-header { padding: 3.5rem 1.5rem 2.5rem; }
-  section { padding: 3rem 1.5rem; }
-  .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .photo-grid { grid-template-columns: 1fr 1fr; }
-  .photo-item:first-child { grid-column: span 2; }
-  footer { padding: 2rem 1.5rem; }
-  .tourn-banner { padding: 1.8rem; }
-  .stats-strip { flex-wrap: wrap; }
-  .stat-item { padding: 2rem; min-width: 50%; }
+/* ══════════════════════════════════════════════════════════════
+   HAMBURGER / MOBILE NAV
+   ══════════════════════════════════════════════════════════════ */
+
+/* The hamburger button — hidden on desktop */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 1.5px solid var(--border-dk);
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
 }
 
+.nav-hamburger span {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background: var(--ink-3);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  transform-origin: center;
+}
+
+/* Animate to X when open */
+.nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* Full-screen slide-down drawer */
+.nav-drawer {
+  display: none; /* shown via JS + .open only on mobile */
+  position: fixed;
+  top: 64px; /* nav height */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: color-mix(in srgb, var(--bg) 97%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--border);
+  z-index: 99;
+  overflow-y: auto;
+  transform: translateY(-8px);
+  opacity: 0;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.nav-drawer.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav-drawer ul {
+  list-style: none;
+  padding: 1.5rem 0;
+}
+
+.nav-drawer ul li a {
+  display: block;
+  padding: 1rem 1.8rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.2s, background 0.2s;
+}
+
+.nav-drawer ul li:first-child a { border-top: 1px solid var(--border); }
+
+.nav-drawer ul li a:hover,
+.nav-drawer ul li a.active {
+  color: var(--gold);
+  background: var(--gold-bg);
+}
+
+/* Prevent body scroll when drawer open */
+body.nav-open { overflow: hidden; }
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE — prevent horizontal overflow everywhere
+   ══════════════════════════════════════════════════════════════ */
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   TABLET  ≤ 900px
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .hero-content-full { padding: 5rem 3rem; }
+  .donation-hero { padding: 4rem 3rem; }
+  .page-header { padding: 4rem 3rem 3rem; }
+  section { padding: 4rem 2rem; }
+  footer { padding: 2rem 2rem; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   MOBILE  ≤ 768px
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* Nav — switch to hamburger */
+  nav {
+    padding: 0 1rem;
+    height: 56px;
+  }
+
+  .nav-links { display: none; }          /* hide desktop links */
+  .nav-hamburger { display: flex; }      /* show burger button */
+  .nav-drawer { display: block; }        /* drawer participates in layout */
+
+  /* Adjust drawer top to match shorter nav */
+  .nav-drawer { top: 56px; }
+
+  /* Logo slightly smaller */
+  .sussex-logo { height: 32px; }
+
+  /* Hero */
+  .hero-content { padding: 3.5rem 1.2rem; }
+  .hero-content-full { padding: 3.5rem 1.2rem; }
+  .hero-image-placeholder { display: none; }
+
+  /* Page header */
+  .page-header { padding: 3rem 1.2rem 2.5rem; }
+  /* hide the giant decorative emoji so it doesn't overflow */
+  .page-header::after { display: none; }
+
+  /* Sections */
+  section { padding: 3rem 1.2rem; }
+
+  /* Grids → single column where needed */
+  .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .getting-here-grid { grid-template-columns: 1fr; }
+
+  /* Photo grid */
+  .photo-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .photo-item:first-child { grid-column: span 2; }
+
+  /* Stats */
+  .stats-strip { flex-wrap: wrap; }
+  .stat-item { padding: 1.5rem 1.2rem; min-width: 50%; border-bottom: 1px solid var(--border); }
+  .stat-item:nth-child(odd) { border-right: 1px solid var(--border); }
+  .stat-item:last-child { border-bottom: none; }
+
+  /* Footer */
+  footer {
+    padding: 2rem 1.2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  /* Tournament banner */
+  .tourn-banner {
+    padding: 1.5rem 1.2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+  }
+  .tourn-banner h3 { font-size: 1.3rem; }
+
+  /* Donation hero */
+  .donation-hero { padding: 3rem 1.2rem; }
+  .donation-hero::before { display: none; } /* hide giant heart */
+
+  /* Report cards */
+  .report-card { flex-direction: column; gap: 0.8rem; padding: 1.5rem; }
+
+  /* Sticky notes — 2 columns on tablet */
+  .sticky-notes { grid-template-columns: 1fr 1fr; }
+
+  /* Tabs — allow wrapping */
+  .tabs { flex-wrap: wrap; }
+  .tab-btn { padding: 0.7rem 1rem; }
+
+  /* Schedule table — make scrollable rather than squishing */
+  .schedule-table,
+  .results-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+
+  /* Info grid */
+  .info-grid { grid-template-columns: 1fr; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   SMALL MOBILE  ≤ 480px
+   ══════════════════════════════════════════════════════════════ */
 @media (max-width: 480px) {
-  .nav-links { gap: 0.7rem; }
-  .nav-links a { font-size: 0.6rem; }
+  /* Tighten hero further */
+  .hero-content-full { padding: 2.8rem 1rem; }
+  .hero h1, .hero-title-full { font-size: clamp(2.8rem, 12vw, 4.5rem); }
+
+  /* Sections */
+  section { padding: 2.5rem 1rem; }
+  .page-header { padding: 2.5rem 1rem 2rem; }
+  .donation-hero { padding: 2.5rem 1rem; }
+
+  /* Photo grid → single column */
   .photo-grid { grid-template-columns: 1fr; }
   .photo-item:first-child { grid-column: span 1; }
-  .stat-item { min-width: 100%; border-right: none; border-bottom: 1px solid var(--border); }
+
+  /* Stats → single column */
+  .stat-item {
+    min-width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .stat-item:last-child { border-bottom: none; }
+  .stat-num { font-size: 2.4rem; }
+
+  /* Sticky notes → single column */
+  .sticky-notes { grid-template-columns: 1fr; }
+
+  /* Notable grid → 2 columns */
+  .notable-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Donation tiers → single column */
+  .donation-tiers { grid-template-columns: 1fr; }
+
+  /* Cards → single column (auto-fit already handles this at very small sizes,
+     but set a hard floor to stop min-content causing overflow) */
+  .cards { grid-template-columns: 1fr; }
+  .side-event-grid { grid-template-columns: 1fr; }
+
+  /* Buttons — full width on tiny screens */
+  .tourn-banner .btn,
+  .tourn-banner .btn-solid { width: 100%; justify-content: center; }
+
+  /* Footer */
+  footer { padding: 1.8rem 1rem; }
+
+  /* Navigation brand — slightly smaller */
+  .nav-brand { font-size: 0.9rem; }
 }
 /* ── Quote / Testimonial Cards ──────────────────────────────── */
 .quotes-grid {
@@ -1446,15 +1680,4 @@ footer a:hover { color: var(--gold-lt); }
   font-style: normal;
 }
 
-/* Responsive additions */
-@media (max-width: 768px) {
-  .donation-hero { padding: 3.5rem 1.5rem; }
-  .getting-here-grid { grid-template-columns: 1fr; }
-  .sticky-notes { grid-template-columns: 1fr 1fr; }
-  .report-card { flex-direction: column; gap: 0.8rem; }
-}
-
-@media (max-width: 480px) {
-  .sticky-notes { grid-template-columns: 1fr; }
-  .notable-grid { grid-template-columns: 1fr 1fr; }
-}
+/* (Mobile styles consolidated in the responsive block below) */

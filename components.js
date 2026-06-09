@@ -1,15 +1,8 @@
 /**
  * components.js
  * Loads shared nav.html and footer.html into every page,
- * marks the correct nav link as active, and handles
- * the dark/light mode toggle.
- *
- * Usage: include ONE script tag at the bottom of <body>:
- *   <script src="components.js"></script>
- *
- * The page must have:
- *   - A <div id="nav-placeholder"></div>  where the nav should appear
- *   - A <div id="footer-placeholder"></div> where the footer should appear
+ * marks the correct nav link as active, handles
+ * the dark/light mode toggle, and the mobile hamburger menu.
  */
 
 (function () {
@@ -28,7 +21,7 @@
       .then(function (html) {
         const el = document.getElementById(placeholderId);
         if (el) {
-          el.outerHTML = html;          // replace placeholder with real markup
+          el.outerHTML = html;
           if (callback) callback();
         }
       })
@@ -40,7 +33,7 @@
   /* ── 3. Mark the active nav link ── */
   function setActiveLink() {
     const page = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.nav-links a').forEach(function (a) {
+    document.querySelectorAll('.nav-links a, .nav-drawer a').forEach(function (a) {
       const href = a.getAttribute('href');
       if (href === page || (page === '' && href === 'index.html')) {
         a.classList.add('active');
@@ -68,11 +61,51 @@
     });
   }
 
-  /* ── 5. Load nav, then footer ── */
+  /* ── 5. Wire up the hamburger menu ── */
+  function initHamburger() {
+    const btn = document.getElementById('navHamburger');
+    const drawer = document.getElementById('navDrawer');
+    if (!btn || !drawer) return;
+
+    function openDrawer() {
+      drawer.classList.add('open');
+      btn.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      drawer.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('nav-open');
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      drawer.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('nav-open');
+    }
+
+    btn.addEventListener('click', function () {
+      drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+    });
+
+    // Close when a link is tapped
+    drawer.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', closeDrawer);
+    });
+
+    // Close on backdrop click
+    document.addEventListener('click', function (e) {
+      if (drawer.classList.contains('open') && !drawer.contains(e.target) && !btn.contains(e.target)) {
+        closeDrawer();
+      }
+    });
+  }
+
+  /* ── 6. Load nav, then footer ── */
   document.addEventListener('DOMContentLoaded', function () {
     loadPartial('nav.html', 'nav-placeholder', function () {
       setActiveLink();
       initThemeToggle();
+      initHamburger();
     });
     loadPartial('footer.html', 'footer-placeholder');
   });

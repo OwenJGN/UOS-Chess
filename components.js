@@ -67,6 +67,11 @@
     const drawer = document.getElementById('navDrawer');
     if (!btn || !drawer) return;
 
+    // Safari: block touchmove on body but allow it inside the drawer
+    function blockTouchMove(e) {
+      if (!drawer.contains(e.target)) e.preventDefault();
+    }
+
     function openDrawer() {
       const scrollY = window.scrollY;
       document.body.style.top = `-${scrollY}px`;
@@ -75,6 +80,7 @@
       btn.setAttribute('aria-expanded', 'true');
       drawer.setAttribute('aria-hidden', 'false');
       document.body.classList.add('nav-open');
+      document.addEventListener('touchmove', blockTouchMove, { passive: false });
     }
 
     function closeDrawer() {
@@ -85,6 +91,7 @@
       btn.setAttribute('aria-expanded', 'false');
       drawer.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('nav-open');
+      document.removeEventListener('touchmove', blockTouchMove);
       window.scrollTo(0, scrollY);
     }
 

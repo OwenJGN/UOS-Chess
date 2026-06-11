@@ -964,6 +964,8 @@ footer a:hover { color: var(--gold-lt); }
   border-top: 1px solid var(--border);
   z-index: 99;
   overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   transform: translateY(-8px);
   opacity: 0;
   transition: transform 0.25s ease, opacity 0.25s ease;
@@ -1007,6 +1009,11 @@ body.nav-open {
   overflow: hidden;
   position: fixed;
   width: 100%;
+  touch-action: none;
+  overscroll-behavior: none;
+}
+html:has(body.nav-open) {
+  overflow: hidden;
 }
 
 /* ══════════════════════════════════════════════════════════════

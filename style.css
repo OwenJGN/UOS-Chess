@@ -1106,12 +1106,13 @@ body {
   .tabs { flex-wrap: wrap; }
   .tab-btn { padding: 0.7rem 1rem; }
 
-  /* Schedule table — make scrollable rather than squishing */
-  .schedule-table,
-  .results-table {
-    display: block;
+  /* Schedule/results tables — scroll via wrapper */
+  .table-scroll-wrap {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+  }
+  .schedule-table,
+  .results-table {
     white-space: nowrap;
   }
 
@@ -1303,6 +1304,14 @@ body {
   color: var(--gold);
   text-transform: uppercase;
   margin-bottom: 1rem;
+}
+
+/* ── Scrollable table wrapper ────────────────────────────────── */
+.table-scroll-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 4px;
 }
 
 .results-table {

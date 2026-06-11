@@ -6,7 +6,7 @@
  */
 
 (function () {
-  /* ── 1. Theme: apply immediately to avoid flash ── */
+  /* ── Theme: apply immediately to avoid flash ── */
   const stored = localStorage.getItem('uos-theme');
   const hour = new Date().getHours();
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -14,7 +14,7 @@
   const theme = stored || (isNight || prefersDark ? 'dark' : 'light');
   document.documentElement.setAttribute('data-theme', theme);
 
-  /* ── 2. Fetch a partial and inject it ── */
+  /* ── Fetch a partial and inject it ── */
   function loadPartial(url, placeholderId, callback) {
     fetch(url)
       .then(function (r) { return r.text(); })
@@ -30,7 +30,7 @@
       });
   }
 
-  /* ── 3. Mark the active nav link ── */
+  /* ── Mark the active nav link ── */
   function setActiveLink() {
     const page = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-links a, .nav-drawer a').forEach(function (a) {
@@ -43,7 +43,7 @@
     });
   }
 
-  /* ── 4. Wire up the theme toggle button ── */
+  /* ── Wire up the theme toggle button ── */
   function initThemeToggle() {
     const btn = document.getElementById('themeToggle');
     if (!btn) return;
@@ -61,7 +61,7 @@
     });
   }
 
-  /* ── 5. Wire up the hamburger menu ── */
+  /* ── Wire up the hamburger menu ── */
   function initHamburger() {
     const btn = document.getElementById('navHamburger');
     const drawer = document.getElementById('navDrawer');
@@ -100,7 +100,7 @@
     });
   }
 
-  /* ── 6. Load nav, then footer ── */
+  /* ── Load nav, then footer ── */
   document.addEventListener('DOMContentLoaded', function () {
     loadPartial('nav.html', 'nav-placeholder', function () {
       setActiveLink();

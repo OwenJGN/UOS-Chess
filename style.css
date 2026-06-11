@@ -1002,8 +1002,12 @@ footer a:hover { color: var(--gold-lt); }
   background: var(--gold-bg);
 }
 
-/* Prevent body scroll when drawer open */
-body.nav-open { overflow: hidden; }
+/* Prevent body scroll when drawer open — includes iOS Safari fix */
+body.nav-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
 
 /* ══════════════════════════════════════════════════════════════
    RESPONSIVE — prevent horizontal overflow everywhere

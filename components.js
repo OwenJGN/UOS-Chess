@@ -68,6 +68,8 @@
     if (!btn || !drawer) return;
 
     function openDrawer() {
+      const scrollY = window.scrollY;
+      document.body.style.top = `-${scrollY}px`;
       drawer.classList.add('open');
       btn.classList.add('open');
       btn.setAttribute('aria-expanded', 'true');
@@ -76,11 +78,14 @@
     }
 
     function closeDrawer() {
+      const scrollY = Math.abs(parseInt(document.body.style.top || '0'));
+      document.body.style.top = '';
       drawer.classList.remove('open');
       btn.classList.remove('open');
       btn.setAttribute('aria-expanded', 'false');
       drawer.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('nav-open');
+      window.scrollTo(0, scrollY);
     }
 
     btn.addEventListener('click', function () {

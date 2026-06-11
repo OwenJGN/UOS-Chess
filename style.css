@@ -1107,16 +1107,11 @@ body {
   .tab-btn { padding: 0.7rem 1rem; }
 
   /* Schedule table — make scrollable rather than squishing */
-  .table-scroll,
-  .schedule-table {
+  .schedule-table,
+  .results-table {
     display: block;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-  }
-
-  .schedule-table,
-  .results-table {
-    min-width: 420px;
     white-space: nowrap;
   }
 
@@ -1285,14 +1280,6 @@ body {
 
 .transport-card ul { padding-left: 1.1rem; }
 .transport-card ul li { margin-bottom: 0.3rem; }
-
-/* ── Scrollable table wrapper ────────────────────────────────── */
-.table-scroll {
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  border-radius: 4px;
-}
 
 /* ── Archive / Results ───────────────────────────────────────── */
 .archive-year {

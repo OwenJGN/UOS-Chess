@@ -30,11 +30,28 @@
       <div class="hero-content hero-content-full">
         <p class="hero-eyebrow">Sussex University</p>
         <h1 class="hero-title-full">SU <em>Chess</em> Society</h1>
-        <p class="hero-sub">
-          Compete, learn, and socialise. Weekly club nights, socials,
-          and open tournaments for university and non-university students — all welcome, all abilities.
+        <p class="hero-sub" id="heroSub">
+          The Sussex University Chess Festival returns 21–26 July 2026 — headlined by GM Simon Williams
+          ("the Ginger GM") and back-to-back UK Blitz Champion GM Eldar Gasanov along with many other
+          notable names as you can see <a href="players.html" style="color:var(--gold);">here</a>, with a
+          combined £5,000 prize fund across the Congress and Masters.
         </p>
-        <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center;">
+
+        <div id="festivalCountdown" class="festival-countdown" style="display:none;">
+          <p class="countdown-label-top">Countdown to the Chess Festival</p>
+          <div class="countdown-grid">
+            <div class="countdown-item"><span class="countdown-num" id="cdDays">00</span><span class="countdown-label">Days</span></div>
+            <div class="countdown-item"><span class="countdown-num" id="cdHours">00</span><span class="countdown-label">Hours</span></div>
+            <div class="countdown-item"><span class="countdown-num" id="cdMins">00</span><span class="countdown-label">Mins</span></div>
+            <div class="countdown-item"><span class="countdown-num" id="cdSecs">00</span><span class="countdown-label">Secs</span></div>
+          </div>
+        </div>
+
+        <div id="festivalLiveBadge" class="festival-live-badge" style="display:none;">
+          <span class="live-dot"></span> The Chess Festival is live now — 21–26 July 2026
+        </div>
+
+        <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; margin-top:2.2rem;">
           <a href="tournament.html" class="btn btn-solid">5th Sussex University Tournament →</a>
           <a href="donate.html" class="btn">Support Us ♥</a>
         </div>
@@ -84,6 +101,9 @@
           <p>We run regular social events throughout the year.</p>
         </div>
       </div>
+      <p style="color:var(--ink-3); margin-top:1.8rem;">
+        Curious who's behind it all? <a href="organiser.html" style="color:var(--gold);">Meet our organiser →</a>
+      </p>
     </section>
 
     <!-- Tournament Banner -->
@@ -114,11 +134,15 @@
       </div>
       <div class="tourn-banner">
         <div>
-          <h3>Sussex University Masters Tournament</h3>
+          <h3><img src="images/masters-congress-logo.jpg" alt="University of Sussex Masters Congress" class="masters-logo-inline" style="margin-right:0.6rem;" />Sussex University Masters Tournament</h3>
           <p class="date">♟ 21 – 26th July 2026 &nbsp;·&nbsp; Student Centre, University of Sussex</p>
           <p style="color:var(--ink-3); font-size:1rem; margin-top:0.8rem; max-width:500px;">
             Over 2000 FIDE. Norm Opportunities. £4000 Prize Fund. 90+30 Time Control.
             Discounted Accommodation (First Come, First Served).
+          </p>
+          <p style="color:var(--ink-3); font-size:0.9rem; margin-top:0.6rem; max-width:500px;">
+            Featuring GM Simon Williams ("the Ginger GM") and 2x UK Blitz Champion GM Eldar Gasanov.
+            <a href="players.html" style="color:var(--gold);">Meet the GMs →</a>
           </p>
           <div style="display:flex; align-items:center; gap:1rem; margin-top:1.2rem; flex-wrap:wrap;">
             <span style="font-family:'DM Mono',monospace; font-size:0.58rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-3);">Supported by</span>
@@ -268,7 +292,7 @@
         </div>
         <div class="side-event-card">
           <h4>Charity Match</h4>
-          <p class="event-date">Past Event · 4th Congress, 2025</p>
+          <p class="event-date">Past Event · 4th Congress, 2026</p>
           <p>A special exhibition match raising funds for charity, featuring notable local players.</p>
           <a href="donate.html" class="btn" style="font-size:0.65rem; padding:0.6rem 1.2rem; margin-top:1rem; display:inline-flex;">Support Us →</a>
         </div>
@@ -281,5 +305,59 @@
   <div id="footer-placeholder"></div>
 
   <script src="components.js"></script>
+  <script>
+    (function () {
+      // Festival window — adjust these if dates change
+      var FESTIVAL_START = new Date(2026, 6, 21, 18, 0, 0); // Tue 21 Jul 2026, 18:00 (Masters R1)
+      var FESTIVAL_END   = new Date(2026, 6, 26, 20, 0, 0); // Sun 26 Jul 2026, 20:00 (after closing ceremony)
+
+      var heroSub    = document.getElementById('heroSub');
+      var countdown  = document.getElementById('festivalCountdown');
+      var liveBadge  = document.getElementById('festivalLiveBadge');
+      var festivalBio = heroSub ? heroSub.innerHTML.trim() : '';
+      var termTimeBio = 'Compete, learn, and socialise. Weekly club nights, socials, and open tournaments for university and non-university students — all welcome, all abilities.';
+
+      function pad(n) { return String(n).padStart(2, '0'); }
+
+      function tick() {
+        var now = new Date();
+        var diff = FESTIVAL_START - now;
+        if (diff <= 0) { render(); return; }
+        var d = Math.floor(diff / 86400000);
+        var h = Math.floor((diff % 86400000) / 3600000);
+        var m = Math.floor((diff % 3600000) / 60000);
+        var s = Math.floor((diff % 60000) / 1000);
+        document.getElementById('cdDays').textContent  = pad(d);
+        document.getElementById('cdHours').textContent = pad(h);
+        document.getElementById('cdMins').textContent  = pad(m);
+        document.getElementById('cdSecs').textContent  = pad(s);
+      }
+
+      function render() {
+        if (!heroSub || !countdown || !liveBadge) return;
+        var now = new Date();
+        if (now < FESTIVAL_START) {
+          heroSub.innerHTML = festivalBio;
+          countdown.style.display = 'flex';
+          liveBadge.style.display = 'none';
+          tick();
+        } else if (now < FESTIVAL_END) {
+          heroSub.innerHTML = festivalBio;
+          countdown.style.display = 'none';
+          liveBadge.style.display = 'inline-flex';
+        } else {
+          // Festival has finished — revert to the regular term-time bio
+          heroSub.textContent = termTimeBio;
+          countdown.style.display = 'none';
+          liveBadge.style.display = 'none';
+        }
+      }
+
+      render();
+      setInterval(function () {
+        if (new Date() < FESTIVAL_START) tick();
+      }, 1000);
+    })();
+  </script>
 </body>
 </html>

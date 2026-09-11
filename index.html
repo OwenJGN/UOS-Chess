@@ -3,361 +3,131 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SU Chess Society</title>
+  <meta name="description" content="University of Sussex Chess Society — weekly chess, socials, events and a welcoming community for players of every level." />
+  <title>University of Sussex Chess Society</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>♟</text></svg>" />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .photo-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .photo-item--featured {
-      grid-row: span 2;
-    }
-  </style>
 </head>
 <body>
-
   <div id="nav-placeholder"></div>
-
-  <div class="page">
-
-    <!-- Hero -->
+  <main class="page">
     <div class="hero hero-full">
       <div class="hero-bg"></div>
       <div class="hero-content hero-content-full">
-        <p class="hero-eyebrow">Sussex University</p>
-        <h1 class="hero-title-full">SU <em>Chess</em> Society</h1>
-        <p class="hero-sub" id="heroSub">
-          The Sussex University Chess Festival returns 21–26 July 2026 — headlined by GM Simon Williams
-          ("the Ginger GM") and back-to-back UK Blitz Champion GM Eldar Gasanov along with many other
-          notable names as you can see <a href="players.html" style="color:var(--gold);">here</a>, with a
-          combined £5,000 prize fund across the Congress and Masters.
-        </p>
-
-        <div id="festivalCountdown" class="festival-countdown" style="display:none;">
-          <p class="countdown-label-top">Countdown to the Chess Festival</p>
-          <div class="countdown-grid">
-            <div class="countdown-item"><span class="countdown-num" id="cdDays">00</span><span class="countdown-label">Days</span></div>
-            <div class="countdown-item"><span class="countdown-num" id="cdHours">00</span><span class="countdown-label">Hours</span></div>
-            <div class="countdown-item"><span class="countdown-num" id="cdMins">00</span><span class="countdown-label">Mins</span></div>
-            <div class="countdown-item"><span class="countdown-num" id="cdSecs">00</span><span class="countdown-label">Secs</span></div>
-          </div>
-        </div>
-
-        <div id="festivalLiveBadge" class="festival-live-badge" style="display:none;">
-          <span class="live-dot"></span> The Chess Festival is live now — 21–26 July 2026
-        </div>
-
+        <p class="hero-eyebrow">University of Sussex</p>
+        <h1 class="hero-title-full">Chess <em>Society</em></h1>
+        <p class="hero-sub">A friendly chess club for Sussex students of every level - from complete beginners to experienced players.</p>
         <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; margin-top:2.2rem;">
-          <a href="tournament.html" class="btn btn-solid">5th Sussex University Tournament →</a>
-          <a href="donate.html" class="btn">Support Us ♥</a>
-        </div>
-        <div class="social-bar" style="justify-content:center;">
-          <a href="https://www.instagram.com/sussexunichess" class="social-btn" target="_blank">📸 Instagram</a>
-          <a href="https://x.com/suchesstourneys" class="social-btn" target="_blank">𝕏 Twitter/X</a>
-          <a href="mailto:hellosuchess@gmail.com" class="social-btn">✉ Email Us</a>
+          <a href="#club-night" class="btn btn-solid">Come to Club Night →</a>
+          <a href="https://www.instagram.com/sussexunichess" class="btn" target="_blank" rel="noopener">Follow @sussexunichess</a>
         </div>
       </div>
     </div>
 
-    <!-- Stats strip -->
     <div class="stats-strip">
-      <div class="stat-item">
-        <span class="stat-num">5th</span>
-        <span class="stat-label">Annual Tournament</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">£5k</span>
-        <span class="stat-label">Total Prize Fund</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">3</span>
-        <span class="stat-label">Sections</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">All</span>
-        <span class="stat-label">Abilities Welcome</span>
-      </div>
+      <div class="stat-item"><span class="stat-num">Tue</span><span class="stat-label">Weekly Club Night</span></div>
+      <div class="stat-item"><span class="stat-num">6–9</span><span class="stat-label">PM During Term</span></div>
+      <div class="stat-item"><span class="stat-num">All</span><span class="stat-label">Abilities Welcome</span></div>
+      <div class="stat-item"><span class="stat-num">♟</span><span class="stat-label">Casual & Competitive</span></div>
     </div>
 
-    <!-- What we offer -->
-    <section>
-      <p class="section-label">About the Society</p>
-      <h2 class="section-title">More than just chess</h2>
+
+    <section id="next-club-night" class="next-club-night-section" aria-labelledby="next-club-night-title">
+      <div class="next-club-night-card">
+        <div>
+          <p class="next-club-kicker">Next Club Night</p>
+          <h2 id="next-club-night-title">Date to be confirmed</h2>
+          <p>University of Sussex</p>
+          <p class="next-club-note">♟ All abilities welcome. Follow @sussexunichess for the latest club-night announcement.</p>
+        </div>
+        <a href="https://www.instagram.com/sussexunichess" class="btn btn-solid" target="_blank" rel="noopener">Check Instagram →</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <p class="section-label">About Us</p>
+      <h2 class="section-title">Chess at Sussex</h2>
+      <p class="section-intro">Whether you want to learn the rules, play a few relaxed games after lectures, improve seriously, or meet people who also love chess, you are welcome here.</p>
       <div class="cards">
-        <div class="card">
-          <h3>Weekly Club Nights</h3>
-          <p>Regular sessions for casual play and competitive practice. Drop in any week.</p>
-        </div>
-        <div class="card">
-          <h3>Tournaments</h3>
-          <p>Internal and external competitions throughout the year, including our 5th iteration of our tournament!</p>
-        </div>
-        <div class="card">
-          <h3>Socials</h3>
-          <p>We run regular social events throughout the year.</p>
-        </div>
+        <div class="card"><span class="card-icon">♟</span><h3>Weekly Chess</h3><p>Drop in for casual games, analysis, puzzles and competitive practice. You do not need a rating or tournament experience.</p></div>
+        <div class="card"><span class="card-icon">🤝</span><h3>Socials</h3><p>Meet people away from the board too. We run society socials and relaxed events throughout the academic year.</p></div>
+        <div class="card"><span class="card-icon">🏆</span><h3>Competitions</h3><p>Play internal events, team chess and other competitive opportunities when you want something more serious.</p></div>
       </div>
-      <p style="color:var(--ink-3); margin-top:1.8rem;">
-        Curious who's behind it all? <a href="organiser.html" style="color:var(--gold);">Meet our organiser →</a>
-      </p>
     </section>
 
-    <!-- Tournament Banner -->
-    <section style="padding-top:0;">
-      <p class="section-label">Next Event</p>
-      <h2 class="section-title">Upcoming Tournament</h2>
-      <div class="tourn-banner">
+    <section id="club-night" style="padding-top:0;">
+      <p class="section-label">Weekly Meet-up</p>
+      <h2 class="section-title">Come along to club night</h2>
+      <div class="club-night-panel">
         <div>
-          <h3>5th Sussex University Tournament</h3>
-          <p class="date">♟ 24 – 26th July 2026 &nbsp;·&nbsp; Student Centre, University of Sussex</p>
-          <p style="color:var(--ink-3); font-size:1rem; margin-top:0.8rem; max-width:500px;">
-            Open to all. Sections include U1300 (ECF Rated Only), U1700 and U2050 (Both FIDE &amp; ECF Rated).
-            £1000 Prize Fund.
-          </p>
-          <div style="display:flex; align-items:center; gap:1rem; margin-top:1.2rem; flex-wrap:wrap;">
-            <span style="font-family:'DM Mono',monospace; font-size:0.58rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-3);">Supported by</span>
-            <picture>
-              <source srcset="images/SJC-Colour-Logo-small.webp" type="image/webp" />
-              <img src="images/SJC-Colour-Logo-small.jpg" alt="Sussex Junior Chess" style="height:36px; width:auto;" />
-            </picture>
-            <picture>
-              <source srcset="images/ECF_Logo_2018_final_square.webp" type="image/webp" />
-              <img src="images/ECF_Logo_2018_final_square.jpg" alt="English Chess Federation" style="height:36px; width:auto;" />
-            </picture>
-          </div>
+          <p class="club-night-kicker">Every Tuesday during term time</p>
+          <h3>6:00pm – 9:00pm · Room T.B.C.</h3>
+          <p>University of Sussex, Falmer, Brighton. Just turn up and play - bring anyone you want!.</p>
         </div>
-        <a href="tournament.html" class="btn btn-solid">View Details →</a>
+        <a href="contact.html" class="btn btn-solid">Ask us anything →</a>
       </div>
-      <div class="tourn-banner">
-        <div>
-          <h3><img src="images/masters-congress-logo.webp" alt="University of Sussex Masters Congress" class="masters-logo-inline" style="margin-right:0.6rem;" />Sussex University Masters Tournament</h3>
-          <p class="date">♟ 21 – 26th July 2026 &nbsp;·&nbsp; Student Centre, University of Sussex</p>
-          <p style="color:var(--ink-3); font-size:1rem; margin-top:0.8rem; max-width:500px;">
-            Over 2000 FIDE. Norm Opportunities. £4000 Prize Fund. 90+30 Time Control.
-            Discounted Accommodation (First Come, First Served).
-          </p>
-          <p style="color:var(--ink-3); font-size:0.9rem; margin-top:0.6rem; max-width:500px;">
-            Featuring GM Simon Williams ("the Ginger GM") and 2x UK Blitz Champion GM Eldar Gasanov.
-            <a href="players.html" style="color:var(--gold);">Meet the GMs →</a>
-          </p>
-          <div style="display:flex; align-items:center; gap:1rem; margin-top:1.2rem; flex-wrap:wrap;">
-            <span style="font-family:'DM Mono',monospace; font-size:0.58rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-3);">Supported by</span>
-            <picture>
-              <source srcset="images/SJC-Colour-Logo-small.webp" type="image/webp" />
-              <img src="images/SJC-Colour-Logo-small.jpg" alt="Sussex Junior Chess" style="height:36px; width:auto;" />
-            </picture>
-            <picture>
-              <source srcset="images/ECF_Logo_2018_final_square.webp" type="image/webp" />
-              <img src="images/ECF_Logo_2018_final_square.jpg" alt="English Chess Federation" style="height:36px; width:auto;" />
-            </picture>
-          </div>
-        </div>
-        <a href="tournament.html" class="btn btn-solid">View Details →</a>
-      </div>
-      <div class="tourn-banner">
-        <div>
-          <h3>Chess Summer School</h3>
-          <p class="date">🎓 23 – 24th July 2026 &nbsp;·&nbsp; Brighton &amp; Sussex Medical School, Falmer Campus</p>
-          <p style="color:var(--ink-3); font-size:1rem; margin-top:0.8rem; max-width:500px;">
-            Open to all players aged 18 and under. Tailored workshops, 1-to-1 Chess Clinic, and personalised game analysis.
-            Full-day and half-day sessions available. All abilities welcome.
-          </p>
-          <div style="display:flex; align-items:center; gap:1rem; margin-top:1.2rem; flex-wrap:wrap;">
-            <span style="font-family:'DM Mono',monospace; font-size:0.58rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-3);">Supported by</span>
-            <picture>
-              <source srcset="images/SJC-Colour-Logo-small.webp" type="image/webp" />
-              <img src="images/SJC-Colour-Logo-small.jpg" alt="Sussex Junior Chess" style="height:36px; width:auto;" />
-            </picture>
-            <picture>
-              <source srcset="images/ECF_Logo_2018_final_square.webp" type="image/webp" />
-              <img src="images/ECF_Logo_2018_final_square.jpg" alt="English Chess Federation" style="height:36px; width:auto;" />
-            </picture>
-          </div>
-        </div>
-        <a href="tournament.html#summer-school" class="btn btn-solid">View Details →</a>
+      <div class="info-grid">
+        <div class="info-box"><h3>New to chess?</h3><p>Perfect. You do not need to know openings, notation or have a rating. We are happy to help you get started.</p></div>
+        <div class="info-box"><h3>Already competitive?</h3><p>You will find plenty of stronger players for serious games, analysis and preparation alongside the casual side of the society.</p></div>
+        <div class="info-box"><h3>What should I bring?</h3><p>Just yourself. If anything changes about a session, Instagram is the best place to check for the latest society update.</p></div>
       </div>
     </section>
 
-    <!-- Past Tournament Photos -->
-    <section>
-      <p class="section-label">Gallery</p>
-      <h2 class="section-title">Past Tournaments</h2>
-      <div class="photo-grid">
-        <div class="photo-item photo-item--featured">
-          <picture>
-            <source srcset="images/20260419_0657.webp" type="image/webp" />
-            <img src="images/20260419_0657.jpg" alt="Tournament players competing at the Sussex University Chess Congress" loading="lazy" width="1200" height="799" />
-          </picture>
-        </div>
-        <div class="photo-item">
-          <picture>
-            <source srcset="images/20260419_0685.webp" type="image/webp" />
-            <img src="images/20260419_0685.jpg" alt="Organiser presenting at the Sussex University Chess Congress" loading="lazy" width="1200" height="800" />
-          </picture>
-        </div>
-        <div class="photo-item">
-          <picture>
-            <source srcset="images/20260419_0248.webp" type="image/webp" />
-            <img src="images/20260419_0248.jpg" alt="Close-up of chess pieces mid-game" loading="lazy" width="1200" height="800" />
-          </picture>
-        </div>
-        <div class="photo-item">
-          <picture>
-            <source srcset="images/20260419_0040.webp" type="image/webp" />
-            <img src="images/20260419_0040.jpg" alt="Prize giving ceremony at the Sussex University Chess Congress" loading="lazy" width="1200" height="799" />
-          </picture>
-        </div>
-        <div class="photo-item">
-          <picture>
-            <source srcset="images/20260419_0049.webp" type="image/webp" />
-            <img src="images/20260419_0049.jpg" alt="Players focused during a round at the congress" loading="lazy" width="1200" height="799" />
-          </picture>
-        </div>
+
+    <section id="join-us" class="join-us-section">
+      <p class="section-label">Join Us</p>
+      <h2 class="section-title">Your first club night is easy</h2>
+      <p class="section-intro">There is no trial, rating or experience requirement. Come along on a Tuesday, find us in Room T.B.C. and play as much or as little chess as you like.</p>
+      <div class="cards join-us-cards">
+        <div class="card"><span class="card-icon">👋</span><h3>Just turn up</h3><p>You do not need to message us beforehand. Come by yourself or bring a friend - either is completely fine.</p></div>
+        <div class="card"><span class="card-icon">♟</span><h3>All levels welcome</h3><p>Complete beginner, casual player or experienced tournament player: there will be people to play and learn with.</p></div>
+        <div class="card"><span class="card-icon">📍</span><h3>Tuesdays · Room T.B.C.</h3><p>We meet from 6:00pm to 9:00pm during term time at the University of Sussex.</p></div>
+      </div>
+      <div class="join-us-actions">
+        <a href="#club-night" class="btn btn-solid">Club night details →</a>
+        <a href="https://www.instagram.com/sussexunichess" class="btn" target="_blank" rel="noopener">Follow @sussexunichess</a>
+        <a href="contact.html" class="btn">Contact us</a>
       </div>
     </section>
 
-    <!-- Voices from Previous Congresses -->
-    <section>
-      <p class="section-label">What People Say</p>
-      <h2 class="section-title">Voices from Previous Congresses</h2>
-      <div class="report-card" style="flex-direction:column; align-items:flex-start; gap:1.2rem;">
-        <div style="display:flex; align-items:center; gap:1rem;">
-          <p class="report-meta" style="margin:0;">1st–4th Sussex University Congress</p>
-        </div>
-        <h4 style="margin:0;">By Luke Freeman</h4>
-        <p style="color:var(--ink-2); line-height:1.8; margin:0;">
-          The first four editions of the Sussex University Chess Congress have truly been a rollercoaster, both for me personally and for the event itself. Across these four tournaments, I have experienced highs and lows on the chessboard, while also witnessing the congress develop into one of the most exciting events on the English chess calendar.
-        </p>
-        <p style="color:var(--ink-2); line-height:1.8; margin:0;">
-          My journey began in 2024 at the inaugural Sussex University Chess Congress. As a competitor, I was pleased to score a solid 3/5, a respectable result in a strong field. One of the highlights of the tournament was the opportunity to face International Master Peter Large. Although I ultimately lost after a hard-fought battle, it was a valuable experience and a memorable game against a highly accomplished player. The first congress set a strong foundation and demonstrated the organisers' ambition to create a high-quality event.
-        </p>
-        <p style="color:var(--ink-2); line-height:1.8; margin:0;">
-          The second edition saw my score drop by half a point, but the results only told part of the story. As the congress grew in popularity, the strength of the opposition increased significantly. The stronger field provided an excellent challenge and reflected the tournament's growing reputation within the chess community. It was encouraging to see more players choosing to attend, helping to establish the event as a serious fixture on the calendar.
-        </p>
-        <p style="color:var(--ink-2); line-height:1.8; margin:0;">
-          By the third congress, the growth of the event was impossible to ignore. Entry numbers had skyrocketed, and the organisers had taken the ambitious step of including an IM norm tournament alongside the main congress. The open section also featured several strong titled players, further raising the standard of competition. Personally, this edition was extremely difficult. I managed only two draws while losing my remaining games, resulting in a painful 99-point drop in my FIDE rating. Despite the disappointing score, I thoroughly enjoyed the atmosphere throughout the event. The opportunity to compete against strong opposition and to witness elite international norm events being integrated into the congress made it a fascinating and enjoyable experience. The tournament's continued development was far more significant than my individual result.
-        </p>
-        <p style="color:var(--ink-2); line-height:1.8; margin:0;">
-          The fourth edition was undoubtedly my favourite. Once again, I scored a solid 3/5, but this achievement felt even more satisfying given the strength of the field, which was packed with titled players. The tournament atmosphere was outstanding, and there was plenty happening beyond the main event. A particular highlight was the exhibition match between Sohum Lohia and Sergey Korshunov, which was played alongside the congress and attracted considerable interest. It was a privilege to watch such high-level chess up close.
-        </p>
-        <p style="color:var(--ink-2); line-height:1.8; margin:0;">
-          Another memorable moment came during the first edition of the congress blitz tournament, where I had the opportunity to face Sergey Korshunov myself. Despite my best efforts, the FIDE Master outclassed me, demonstrating exactly why he is such a strong player. His victory capped off a fantastic event for him, as he scored a perfect 9/9 in the blitz tournament and also secured a convincing win in the exhibition match.
-        </p>
+    <section id="socials" style="padding-top:0;">
+      <p class="section-label">Latest from the Society</p>
+      <h2 class="section-title">Follow Sussex Chess</h2>
+      <p class="section-intro">Club-night updates, socials, results, photos and announcements are posted across our social channels.</p>
+      <div class="instagram-cta">
+        <div class="instagram-mark">◎</div>
+        <div><h3>@sussexunichess</h3><p>Instagram · University of Sussex Chess Society</p></div>
+        <a href="https://www.instagram.com/sussexunichess" class="btn btn-solid" target="_blank" rel="noopener">Open Instagram →</a>
       </div>
-
-    </section>
-
-    <!-- Tournament Reports -->
-    <section style="padding-top:0;">
-      <p class="section-label">Press &amp; Reports</p>
-      <h2 class="section-title">Tournament Reports</h2>
-      <p style="color:var(--ink-3); margin-bottom:2rem; max-width:650px;">
-        Match reports and write-ups from previous Sussex University congresses.
-      </p>
-      <div class="report-card">
-        <span class="report-icon">📰</span>
-        <div>
-          <p class="report-meta">3rd Sussex University Congress · 2025</p>
-          <h4>Report by Jude Shearsby</h4>
-          <a href="https://x.com/SUChessTourneys/status/1961874931496501389?s=20" class="btn" style="font-size:0.65rem; padding:0.6rem 1.2rem;" target="_blank">Read on X/Twitter →</a>
-        </div>
-      </div>
-      <div class="report-card">
-        <span class="report-icon">📰</span>
-        <div>
-          <p class="report-meta">3rd Sussex University Congress · 2025</p>
-          <h4>Report by Kenneth Hobson</h4>
-          <a href="https://x.com/SUChessTourneys/status/1961056258984731030?s=20" class="btn" style="font-size:0.65rem; padding:0.6rem 1.2rem;" target="_blank">Read on X/Twitter →</a>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- Community Events -->
-    <section id="community" style="padding-top:0;">
-      <p class="section-label">Community</p>
-      <h2 class="section-title">Beyond the Board</h2>
-      <p style="color:var(--ink-3); max-width:650px; margin-bottom:0;">
-        Chess at Sussex is about more than just the games, we run events that bring the whole community together.
-      </p>
-      <div class="side-event-grid">
-        <div class="side-event-card">
-          <h4>Parents &amp; Supporters Panel</h4>
-          <p class="event-date">Past Event · 1st-4th Congress</p>
-          <p>An informal panel discussion for parents of junior players, covering how to support a young chess player's development, ECF grading, and the junior chess pathway in the UK.</p>
-        </div>
-        <div class="side-event-card">
-          <h4>Charity Match</h4>
-          <p class="event-date">Past Event · 4th Congress, 2026</p>
-          <p>A special exhibition match raising funds for charity, featuring notable local players.</p>
-          <a href="donate.html" class="btn" style="font-size:0.65rem; padding:0.6rem 1.2rem; margin-top:1rem; display:inline-flex;">Support Us →</a>
-        </div>
+      <div class="instagram-cta social-x-cta">
+        <div class="instagram-mark">𝕏</div>
+        <div><h3>@suchesstourneys</h3><p>Twitter / X · Sussex chess updates</p></div>
+        <a href="https://x.com/suchesstourneys" class="btn btn-solid" target="_blank" rel="noopener">Open X →</a>
       </div>
     </section>
 
-  </div>
+    <section id="gallery-preview" style="padding-top:0;">
+      <p class="section-label">Society Life</p>
+      <h2 class="section-title">On and off the board</h2>
+      <p class="section-intro">A home for club nights, socials, team matches and everything else we get up to during the year.</p>
+      <div class="cards">
+        <div class="card"><h3>Club Nights</h3><p>Weekly games and a relaxed place to meet other chess players on campus.</p></div>
+        <div class="card"><h3>Events</h3><p>Internal tournaments, themed nights and other chess events across the academic year.</p></div>
+        <div class="card"><h3>Photos & Videos</h3><p>See moments from the society in our gallery and on Instagram.</p><a href="gallery.html" class="inline-link">View gallery →</a></div>
+      </div>
+    </section>
 
-  <!-- Footer (injected by components.js) -->
+    <section id="past-events" style="padding-top:0; padding-bottom:4rem;">
+      <p class="section-label">Society History</p>
+      <h2 class="section-title">Looking for the old Sussex tournaments?</h2>
+      <p class="section-intro">The previous Sussex University congress and festival material has been kept separate from the main society website, so it is still available without dominating current society information.</p>
+      <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.5rem;">
+        <a href="archive.html" class="btn">Past Tournament Archive →</a>
+      </div>
+    </section>
+  </main>
   <div id="footer-placeholder"></div>
-
   <script src="components.js"></script>
-  <script>
-    (function () {
-      // Festival window — adjust these if dates change
-      var FESTIVAL_START = new Date(2026, 6, 21, 18, 0, 0); // Tue 21 Jul 2026, 18:00 (Masters R1)
-      var FESTIVAL_END   = new Date(2026, 6, 26, 20, 0, 0); // Sun 26 Jul 2026, 20:00 (after closing ceremony)
 
-      var heroSub    = document.getElementById('heroSub');
-      var countdown  = document.getElementById('festivalCountdown');
-      var liveBadge  = document.getElementById('festivalLiveBadge');
-      var festivalBio = heroSub ? heroSub.innerHTML.trim() : '';
-      var termTimeBio = 'Compete, learn, and socialise. Weekly club nights, socials, and open tournaments for university and non-university students — all welcome, all abilities.';
-
-      function pad(n) { return String(n).padStart(2, '0'); }
-
-      function tick() {
-        var now = new Date();
-        var diff = FESTIVAL_START - now;
-        if (diff <= 0) { render(); return; }
-        var d = Math.floor(diff / 86400000);
-        var h = Math.floor((diff % 86400000) / 3600000);
-        var m = Math.floor((diff % 3600000) / 60000);
-        var s = Math.floor((diff % 60000) / 1000);
-        document.getElementById('cdDays').textContent  = pad(d);
-        document.getElementById('cdHours').textContent = pad(h);
-        document.getElementById('cdMins').textContent  = pad(m);
-        document.getElementById('cdSecs').textContent  = pad(s);
-      }
-
-      function render() {
-        if (!heroSub || !countdown || !liveBadge) return;
-        var now = new Date();
-        if (now < FESTIVAL_START) {
-          heroSub.innerHTML = festivalBio;
-          countdown.style.display = 'flex';
-          liveBadge.style.display = 'none';
-          tick();
-        } else if (now < FESTIVAL_END) {
-          heroSub.innerHTML = festivalBio;
-          countdown.style.display = 'none';
-          liveBadge.style.display = 'inline-flex';
-        } else {
-          // Festival has finished — revert to the regular term-time bio
-          heroSub.textContent = termTimeBio;
-          countdown.style.display = 'none';
-          liveBadge.style.display = 'none';
-        }
-      }
-
-      render();
-      setInterval(function () {
-        if (new Date() < FESTIVAL_START) tick();
-      }, 1000);
-    })();
-  </script>
 </body>
 </html>

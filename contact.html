@@ -3,154 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — SU Chess Society</title>
+  <title>Contact - University of Sussex Chess Society</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>♟</text></svg>" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <div id="nav-placeholder"></div>
-
   <div class="page">
-
-    <!-- Page Header -->
     <div class="page-header" data-icon="✉">
-      <p class="section-label" style="margin-bottom:0.8rem;">SU Chess Society</p>
+      <p class="section-label" style="margin-bottom:0.8rem;">University of Sussex Chess Society</p>
       <h1>Get in Touch</h1>
-      <p style="color:rgba(255,255,255,0.7); margin-top:1rem; font-size:1.1rem;">
-        Questions about tournaments or society — we'd love to hear from you.
-      </p>
+      <p style="color:rgba(255,255,255,0.7); margin-top:1rem; font-size:1.1rem;">Questions about joining, club nights or society events? Send us a message.</p>
     </div>
-
-    <!-- Contact Details -->
     <section>
-      <p class="section-label">Contact Details</p>
-      <h2 class="section-title">Reach Us</h2>
-
+      <p class="section-label">Contact</p><h2 class="section-title">Say hello</h2>
       <div class="contact-grid">
         <div>
-          <div class="contact-item" style="margin-bottom:2rem;">
-            <span class="label">Email</span>
-            <a href="mailto:hellosuchess@gmail.com">hellosuchess@gmail.com</a>
-          </div>
-          <div class="contact-item" style="margin-bottom:2rem;">
-            <span class="label">Instagram</span>
-            <a href="https://www.instagram.com/sussexunichess">@sussexunichess</a>
-          </div>
-          <div class="contact-item" style="margin-bottom:2rem;">
-            <span class="label">X/Twitter</span>
-            <a href="https://x.com/suchesstourneys">@SUChessTourneys</a>
-          </div>
-          <div class="contact-item">
-            <span class="label">Club Night Location</span>
-            <p>Fulton 214, University of Sussex</p>
-            <p style="color:var(--ink-3); font-size:0.9rem; margin-top:0.3rem;">Brighton, BN1 9RH</p>
-            <p style="color:var(--ink-3); font-size:0.9rem; margin-top:0.3rem;">Every Tuesday, 6pm–9pm during term time.</p>
-          </div>
+          <div class="contact-item" style="margin-bottom:2rem;"><span class="label">Instagram</span><a href="https://www.instagram.com/sussexunichess" target="_blank" rel="noopener">@sussexunichess</a><p style="color:var(--ink-3); font-size:0.9rem; margin-top:0.3rem;">Best for current society updates.</p></div>
+          <div class="contact-item" style="margin-bottom:2rem;"><span class="label">Email</span><a href="mailto:hellosuchess@gmail.com">hellosuchess@gmail.com</a></div>
+          <div class="contact-item"><span class="label">Club Night</span><p>Room T.B.C., University of Sussex</p><p style="color:var(--ink-3); font-size:0.9rem; margin-top:0.3rem;">Every Tuesday, 6pm–9pm during term time.</p></div>
         </div>
-
-        <!-- Contact Form -->
         <div>
           <p class="section-label" style="margin-bottom:1rem;">Send a Message</p>
           <div class="contact-form">
-            <div class="form-group">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" name="name" placeholder="e.g. Jane Smith" />
-            </div>
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="e.g. j.smith@sussex.ac.uk" />
-            </div>
-            <div class="form-group">
-              <label for="subject">Subject</label>
-              <input type="text" id="subject" name="subject" placeholder="e.g. Tournament entry question" />
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Tell us how we can help…"></textarea>
-            </div>
-            <button class="btn btn-solid" onclick="submitForm()" style="align-self:flex-start; cursor:pointer; font-size:0.72rem;">
-              Send Message →
-            </button>
+            <div class="form-group"><label for="name">Your Name</label><input type="text" id="name" name="name" placeholder="Your name" /></div>
+            <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="email" placeholder="you@sussex.ac.uk" /></div>
+            <div class="form-group"><label for="subject">Subject</label><input type="text" id="subject" name="subject" placeholder="e.g. Club night question" /></div>
+            <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" placeholder="How can we help?"></textarea></div>
+            <button class="btn btn-solid" onclick="submitForm()" style="align-self:flex-start; cursor:pointer; font-size:0.72rem;">Send Message →</button>
             <p id="form-msg" style="display:none; font-family:'DM Mono',monospace; font-size:0.75rem; letter-spacing:0.08em;"></p>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Social Media -->
-    <section style="padding-top:0;">
-      <p class="section-label">Follow Us</p>
-      <h2 class="section-title">Social Media</h2>
-      <p style="color:var(--ink-3); margin-bottom:1.5rem;">Stay up to date with results, announcements, and chess content.</p>
-      <div class="social-bar">
-        <a href="https://www.instagram.com/sussexunichess" class="social-btn" target="_blank">📸 @sussexunichess</a>
-        <a href="https://x.com/suchesstourneys" class="social-btn" target="_blank">𝕏 @SUChessTourneys</a>
-        <a href="mailto:hellosuchess@gmail.com" class="social-btn">✉ hellosuchess@gmail.com</a>
-      </div>
-    </section>
-
   </div>
-
-  <!-- Footer (injected by components.js) -->
   <div id="footer-placeholder"></div>
-
   <script src="components.js"></script>
   <script>
-    async function submitForm() {
-      const name    = document.getElementById('name').value.trim();
-      const email   = document.getElementById('email').value.trim();
-      const subject = document.getElementById('subject').value.trim();
-      const message = document.getElementById('message').value.trim();
-      const msg     = document.getElementById('form-msg');
-
-      // Basic validation
-      if (!name || !email) {
-        msg.textContent = '⚠ Please fill in your name and email address.';
-        msg.style.color = 'var(--rust)';
-        msg.style.display = 'block';
-        return;
-      }
-
-      // Disable button while sending
-      const btn = document.querySelector('.contact-form .btn-solid');
-      btn.textContent = 'Sending…';
-      btn.disabled = true;
-
-      try {
-        const response = await fetch('https://formspree.io/f/meewrqdg', {
-          method: 'POST',
-          headers: { 'Accept': 'application/json' },
-          body: new URLSearchParams({ name, email, subject, message })
-        });
-
-        if (response.ok) {
-          msg.textContent = '✓ Thanks, ' + name + '! We\'ll be in touch soon.';
-          msg.style.color = 'var(--gold)';
-          msg.style.display = 'block';
-          // Clear the form
-          ['name','email','subject','message'].forEach(id => {
-            const el = document.getElementById(id);
-            el.value = '';
-          });
-          btn.textContent = 'Sent ✓';
-        } else {
-          const data = await response.json();
-          const errorMsg = data.errors ? data.errors.map(e => e.message).join(', ') : 'Something went wrong.';
-          msg.textContent = '⚠ ' + errorMsg;
-          msg.style.color = 'var(--rust)';
-          msg.style.display = 'block';
-          btn.textContent = 'Send Message →';
-          btn.disabled = false;
-        }
-      } catch (err) {
-        msg.textContent = '⚠ Network error — please try emailing us directly.';
-        msg.style.color = 'var(--rust)';
-        msg.style.display = 'block';
-        btn.textContent = 'Send Message →';
-        btn.disabled = false;
-      }
-    }
+    async function submitForm(){const ids=['name','email','subject','message'];const [name,email,subject,message]=ids.map(id=>document.getElementById(id).value.trim());const msg=document.getElementById('form-msg');if(!name||!email){msg.textContent='⚠ Please fill in your name and email address.';msg.style.color='var(--gold)';msg.style.display='block';return;}const btn=document.querySelector('.contact-form .btn-solid');btn.textContent='Sending…';btn.disabled=true;try{const response=await fetch('https://formspree.io/f/meewrqdg',{method:'POST',headers:{'Accept':'application/json'},body:new URLSearchParams({name,email,subject,message})});if(response.ok){msg.textContent='✓ Thanks, '+name+'! We’ll be in touch soon.';msg.style.color='var(--gold)';msg.style.display='block';ids.forEach(id=>document.getElementById(id).value='');btn.textContent='Sent ✓';}else{throw new Error('send failed');}}catch(err){msg.textContent='⚠ Could not send — please email us directly.';msg.style.color='var(--gold)';msg.style.display='block';btn.textContent='Send Message →';btn.disabled=false;}}
   </script>
 </body>
 </html>

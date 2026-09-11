@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Archive — SU Chess Society</title>
+  <title>Past Tournaments - University of Sussex Chess Society</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>♟</text></svg>" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -16,13 +16,13 @@
     <!-- Page Header -->
     <div class="page-header" data-icon="📜">
       <p class="section-label" style="margin-bottom:0.8rem;">SU Chess Society</p>
-      <h1>Congress Archive</h1>
+      <h1>Past Tournament Archive</h1>
       <p style="color:rgba(255,255,255,0.7); margin-top:1rem; font-size:1.1rem;">
-        Results, prize winners, and notable players from every Sussex University Congress.
+        A separate historical archive of the Sussex University congresses and tournament events.
       </p>
       <div style="display:flex; gap:1rem; margin-top:1.8rem; flex-wrap:wrap;">
         <a href="#results" class="btn btn-solid">Results →</a>
-        <a href="#hall-of-fame" class="btn">Hall of Fame</a>
+        <a href="#hall-of-fame" class="btn archive-hof-btn">Hall of Fame</a>
       </div>
     </div>
 
@@ -35,15 +35,40 @@
       </p>
 
       <div class="tabs">
-        <button class="tab-btn active" onclick="showArchive('arch2025', this)">2026 — 4th</button>
-        <button class="tab-btn" onclick="showArchive('arch2024', this)">2025 — 3rd</button>
-        <button class="tab-btn" onclick="showArchive('arch2023', this)">2025 — 2nd</button>
-        <button class="tab-btn" onclick="showArchive('arch2022', this)">2024 — 1st</button>
+        <button class="tab-btn active" onclick="showArchive('arch2026', this)">2026 - 5th</button>
+        <button class="tab-btn" onclick="showArchive('arch2025', this)">2026 - 4th</button>
+        <button class="tab-btn" onclick="showArchive('arch2024', this)">2025 - 3rd</button>
+        <button class="tab-btn" onclick="showArchive('arch2023', this)">2025 - 2nd</button>
+        <button class="tab-btn" onclick="showArchive('arch2022', this)">2024 - 1st</button>
       </div>
 
-      <div id="arch2025" class="tab-content active">
+      <div id="arch2026" class="tab-content active">
         <div class="archive-year">
-          <h3>4th Sussex University Weekend Congress — 2026</h3>
+          <h3>5th Sussex University Chess Festival - 2026</h3>
+
+          <p class="section-label" style="margin:1.5rem 0 0.6rem;">Masters</p>
+          <div class="table-scroll-wrap"><table class="results-table"><thead><tr><th>Place</th><th>Player</th><th>Rating</th><th>Score</th></tr></thead><tbody>
+            <tr><td>1st</td><td>GM Gasanov, Eldar</td><td>2443</td><td>8/9</td></tr><tr><td>2nd</td><td>GM Zilka, Stepan</td><td>2526</td><td>7/9</td></tr><tr><td>3rd</td><td>GM Kjartansson, Gudmundur</td><td>2395</td><td>6/9</td></tr>
+          </tbody></table></div>
+          <p class="section-label" style="margin:1.5rem 0 0.6rem;">U2050</p>
+          <div class="table-scroll-wrap"><table class="results-table"><thead><tr><th>Place</th><th>Player</th><th>Rating</th><th>Score</th></tr></thead><tbody>
+            <tr><td>1st</td><td>Amoako, Philip Selikem Yao</td><td>1980</td><td>4.5/5</td></tr><tr><td>2nd</td><td>Faulkner, Martin J</td><td>1913</td><td>4/5</td></tr><tr><td>3rd</td><td>Ashworth, Michael</td><td>2043</td><td>4/5</td></tr>
+          </tbody></table></div>
+          <p class="section-label" style="margin:1.5rem 0 0.6rem;">U1700</p>
+          <div class="table-scroll-wrap"><table class="results-table"><thead><tr><th>Place</th><th>Player</th><th>Rating</th><th>Score</th></tr></thead><tbody>
+            <tr><td>1st</td><td>Cetin, Aras</td><td>1430</td><td>5/5</td></tr><tr><td>2nd</td><td>Amirthanathan, Adam</td><td>1489</td><td>4/5</td></tr><tr><td>3rd</td><td>Talab, Karam</td><td>1463</td><td>4/5</td></tr>
+          </tbody></table></div>
+          <p class="section-label" style="margin:1.5rem 0 0.6rem;">U1300</p>
+          <div class="table-scroll-wrap"><table class="results-table"><thead><tr><th>Place</th><th>Player</th><th>Rating</th><th>Score</th></tr></thead><tbody>
+            <tr><td>1st</td><td>Jeffries, Christopher</td><td>UNR</td><td>5/5</td></tr><tr><td>2nd</td><td>Chau, James</td><td>UNR</td><td>4/5</td></tr><tr><td>3rd</td><td>Balaji, Yughan</td><td>1051</td><td>4/5</td></tr>
+          </tbody></table></div>
+        </div>
+      </div>
+
+
+      <div id="arch2025" class="tab-content">
+        <div class="archive-year">
+          <h3>4th Sussex University Weekend Congress - 2026</h3>
 
           <p class="section-label" style="margin:1.5rem 0 0.6rem;">Under 2400</p>
           <div class="table-scroll-wrap">
@@ -97,7 +122,7 @@
 
       <div id="arch2024" class="tab-content">
         <div class="archive-year">
-          <h3>3rd Sussex University Chess Tournament — 2025</h3>
+          <h3>3rd Sussex University Chess Tournament - 2025</h3>
 
           <p class="section-label" style="margin:1.5rem 0 0.6rem;">IM Norm Round Robin</p>
           <div class="table-scroll-wrap">
@@ -151,7 +176,7 @@
 
       <div id="arch2023" class="tab-content">
         <div class="archive-year">
-          <h3>2nd Sussex University Chess Congress — 2025</h3>
+          <h3>2nd Sussex University Chess Congress - 2025</h3>
 
           <p class="section-label" style="margin:1.5rem 0 0.6rem;">Open</p>
           <div class="table-scroll-wrap">
@@ -193,7 +218,7 @@
 
       <div id="arch2022" class="tab-content">
         <div class="archive-year">
-          <h3>1st Sussex University Chess Congress — 2024</h3>
+          <h3>1st Sussex University Chess Congress - 2024</h3>
 
           <p class="section-label" style="margin:1.5rem 0 0.6rem;">Open</p>
           <div class="table-scroll-wrap">
@@ -227,6 +252,7 @@
       </div>
     </section>
 
+
     <!-- Hall of Fame -->
     <section id="hall-of-fame" style="padding-top:0;">
       <p class="section-label">Hall of Fame</p>
@@ -235,8 +261,17 @@
         Every section winner from each Sussex University Chess Congress.
       </p>
 
+      <!-- 5th Festival 2026 -->
+      <p class="section-label" style="margin-bottom:0.8rem;">5th Festival - 2026</p>
+      <div class="notable-grid" style="margin-bottom:2.5rem;">
+        <div class="notable-card"><div class="notable-avatar">♔</div><h4>GM Gasanov, Eldar</h4><p class="notable-title">Masters</p></div>
+        <div class="notable-card"><div class="notable-avatar">♔</div><h4>Amoako, Philip Selikem Yao</h4><p class="notable-title">U2050</p></div>
+        <div class="notable-card"><div class="notable-avatar">♔</div><h4>Cetin, Aras</h4><p class="notable-title">U1700</p></div>
+        <div class="notable-card"><div class="notable-avatar">♔</div><h4>Jeffries, Christopher</h4><p class="notable-title">U1300</p></div>
+      </div>
+
       <!-- 4th Congress 2026 -->
-      <p class="section-label" style="margin-bottom:0.8rem;">4th Congress — 2026</p>
+      <p class="section-label" style="margin-bottom:0.8rem;">4th Congress - 2026</p>
       <div class="notable-grid" style="margin-bottom:2.5rem;">
         <div class="notable-card">
           <div class="notable-avatar">♔</div>
@@ -261,7 +296,7 @@
       </div>
 
       <!-- 3rd Congress 2025 -->
-      <p class="section-label" style="margin-bottom:0.8rem;">3rd Congress — 2025</p>
+      <p class="section-label" style="margin-bottom:0.8rem;">3rd Congress - 2025</p>
       <div class="notable-grid" style="margin-bottom:2.5rem;">
         <div class="notable-card">
           <div class="notable-avatar">♛</div>
@@ -286,7 +321,7 @@
       </div>
 
       <!-- 2nd Congress 2025 -->
-      <p class="section-label" style="margin-bottom:0.8rem;">2nd Congress — 2025</p>
+      <p class="section-label" style="margin-bottom:0.8rem;">2nd Congress - 2025</p>
       <div class="notable-grid" style="margin-bottom:2.5rem;">
         <div class="notable-card">
           <div class="notable-avatar">♞</div>
@@ -306,7 +341,7 @@
       </div>
 
       <!-- 1st Congress 2024 -->
-      <p class="section-label" style="margin-bottom:0.8rem;">1st Congress — 2024</p>
+      <p class="section-label" style="margin-bottom:0.8rem;">1st Congress - 2024</p>
       <div class="notable-grid" style="margin-bottom:0;">
         <div class="notable-card">
           <div class="notable-avatar">♜</div>
@@ -333,37 +368,55 @@
       <table class="results-table">
         <thead><tr><th>Title</th><th>Name</th><th>Federation</th></tr></thead>
         <tbody>
+
           <tr><td>GM</td><td>Gormally, Daniel W</td><td>ENG</td></tr>
+          <tr><td>GM</td><td>Zilka, Stepan</td><td>CZE</td></tr>
+          <tr><td>GM</td><td>Williams, Simon K</td><td>ENG</td></tr>
+          <tr><td>GM</td><td>Gasanov, Eldar</td><td>UKR</td></tr>
+          <tr><td>GM</td><td>Korneev, Oleg</td><td>ESP</td></tr>
+          <tr><td>GM</td><td>Kjartansson, Gudmundur</td><td>ISL</td></tr>
           <tr><td>IM</td><td>Balaji, Aaravamudhan</td><td>ENG</td></tr>
           <tr><td>IM</td><td>Buckley, Graeme N</td><td>ENG</td></tr>
+          <tr><td>IM</td><td>Fitzsimons, David</td><td>IRL</td></tr>
           <tr><td>IM</td><td>Garcia Martin, Marta</td><td>ESP</td></tr>
+          <tr><td>IM</td><td>Gluckman, David</td><td>RSA</td></tr>
+          <tr><td>IM</td><td>Golding, Alex</td><td>ENG</td></tr>
+          <tr><td>IM</td><td>Jackson, James P</td><td>ENG</td></tr>
           <tr><td>IM</td><td>Large, Peter G</td><td>ENG</td></tr>
           <tr><td>IM</td><td>Lohia, Sohum</td><td>ENG</td></tr>
           <tr><td>IM</td><td>Suarez Uriel, Adrian</td><td>ESP</td></tr>
           <tr><td>FM</td><td>Ady, Jonathan J.</td><td>ENG</td></tr>
+          <tr><td>FM</td><td>Badacsonyi, Stanley</td><td>ENG</td></tr>
           <tr><td>FM</td><td>Banerjee, Supratit</td><td>ENG</td></tr>
           <tr><td>FM</td><td>Bezuidenhout, Roland</td><td>RSA</td></tr>
+          <tr><td>FM</td><td>Fava, Lorenzo</td><td>ITA</td></tr>
+          <tr><td>FM</td><td>Khoury, Theo</td><td>ENG</td></tr>
           <tr><td>FM</td><td>Korshunov, Sergey And.</td><td>FID</td></tr>
+          <tr><td>FM</td><td>Merriman, John</td><td>ENG</td></tr>
+          <tr><td>FM</td><td>Rami, Talab</td><td>SYR</td></tr>
+          <tr><td>FM</td><td>Sedrani, Ammar</td><td>UAE</td></tr>
+          <tr><td>FM</td><td>Shearsby, Jude</td><td>ENG</td></tr>
           <tr><td>FM</td><td>Southcott-Moyers, Indy</td><td>ENG</td></tr>
+          <tr><td>WFM</td><td>Hariharan, Shambavi</td><td>ENG</td></tr>
           <tr><td>WFM</td><td>Norinkeviciute, Rasa</td><td>LTU</td></tr>
+          <tr><td>WFM</td><td>Varney, Zoe</td><td>ENG</td></tr>
           <tr><td>NM</td><td>Brewer, Callum D</td><td>ENG</td></tr>
           <tr><td>NM</td><td>Payne, Matthew J</td><td>ENG</td></tr>
           <tr><td>CM</td><td>Collins, Adam</td><td>IRL</td></tr>
           <tr><td>CM</td><td>Finn, Peter</td><td>ENG</td></tr>
           <tr><td>CM</td><td>Flynn, Jacob</td><td>IRL</td></tr>
+          <tr><td>CM</td><td>Gunathilake, M D Vinuda Shenal</td><td>SRI</td></tr>
+          <tr><td>CM</td><td>Steiners, Emils</td><td>LAT</td></tr>
+          <tr><td>CM</td><td>Willmoth, Robert F</td><td>ENG</td></tr>
+          <tr><td>CM</td><td>Willson, Ollie</td><td>ENG</td></tr>
           <tr><td>CM</td><td>Yoon, Jacob D</td><td>ENG</td></tr>
           <tr><td>CM</td><td>Yu, Rock</td><td>ENG</td></tr>
+          <tr><td>CM</td><td>Zhao, George</td><td>ENG</td></tr>
           <tr><td>ACM</td><td>Lishoy Gengis Paratazham, Dildarav</td><td>ENG</td></tr>
           <tr><td>AFM</td><td>Damodaran, Patrick</td><td>ENG</td></tr>
           <tr><td>AIM</td><td>Bevis, Noah</td><td>ENG</td></tr>
         </tbody>
       </table>
-      </div>
-    </section>
-    <section style="padding-top:0; padding-bottom:4rem;">
-      <div style="display:flex; gap:1.5rem; flex-wrap:wrap;">
-        <a href="tournament.html" class="btn btn-solid">2026 Tournaments →</a>
-
       </div>
     </section>
 
